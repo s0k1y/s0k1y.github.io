@@ -7,7 +7,7 @@ function snowFall(snow) {
     snow = snow || {};
     this.maxFlake = snow.maxFlake || 200;   /* 最多片数 */
     this.flakeSize = snow.flakeSize || 10;  /* 雪花形状 */
-    this.fallSpeed = snow.fallSpeed || 2;   /* 坠落速度 */
+    this.fallSpeed = snow.fallSpeed || 1;   /* 坠落速度 */
 }
 /* 兼容写法 */
 requestAnimationFrame = window.requestAnimationFrame ||

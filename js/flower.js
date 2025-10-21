@@ -87,7 +87,7 @@
                 };
                 break;
             case 'fny':
-                random = 1.5 + Math.random() * 0.7
+                random = 0.5 + Math.random() * 0.7
                 ret = function (x, y) {
                     return y + random;
                 };
